@@ -1,9 +1,91 @@
-<html>
- 
-<body>
-  <h1>Kenji Ginjo</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
- 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenji Ginjo's Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./icons.css" />
+    <script src="/script.js" async></script>
+  </head>
+  <body>
+    <nav>
+      <h2 id="logo">Kenji Ginjo</h2>
+      <ul class="navigation-items">
+        <li class="navigation-item"><a href="#about-me">About Me</a></li>
+        <li class="navigation-item"><a href="#projects">Projects</a></li>
+        <li class="navigation-item"><a href="#skills">Skills</a></li>
+        <li class="navigation-item"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-container">
+            <h2>About Me</h2>
+            <p>
+              Hi! I'm Kenji, husband, (very) amateur gourmet, and a full-stack
+              developer. I've worked on the local government HR management
+              system. As a freelance full-stack developer, I worked on many
+              different shopping systems.
+            </p>
+            <p>
+              For now, I would prefer to join a company that can provide me with
+              an opportunity to work with team members to build a great project
+              (that can benefit humanity or help people learn and progress) and
+              allows me to work remotely.
+            </p>
+            <p>
+              In my free time, I like to learn English and computer science and
+              to concrete my full-stack engineering fundamental skills. I also
+              like to taste delicious food from different countries.
+            </p>
+            <p>
+              Fun fact! I've been programing for
+              <span id="time-container"></span> !
+            </p>
+          </div>
+          <img id="portrait" alt="A photo of Kenji" class="portrait" />
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Fow now no items to display</h3>
+          </summary>
+          <img alt="emmm" class="project-image" />
+          <p class="project-description">emmm.</p>
+        </details>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container">
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-vue"></i>
+          <i class="fab fa-figma"></i>
+          <i class="fab fa-git"></i>
+          <i class="fab fa-chrome"></i>
+          <i class="fab fa-terminal"></i>
+          <i class="fab fa-universal-access"></i>
+          <i class="fab fa-npm"></i>
+          <i class="fab fa-node"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: KenjiGinjo@gmail.com</p>
+        <p>https://twitter.com/KenjiGinjo</p>
+      </section>
+    </main>
+
+    <footer>Made with <span class="heart">♥</span> in Japan</footer>
+  </body>
 </html>
