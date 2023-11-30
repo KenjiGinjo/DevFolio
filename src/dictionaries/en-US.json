@@ -1,0 +1,24 @@
+{
+  "name": "Kenji Ginjo",
+  "aboutMe": {
+    "p_1": "I am a passionate full-stack engineer with extensive experience in web application development. Born in 1991 in Harbin, Heilongjiang, China, I have a deep interest in technological innovation and software development. I am committed to solving complex problems and enhancing user experience through coding. I am eager to join an innovative company, looking forward to continuing my career in an environment filled with vitality and a spirit of innovation.",
+    "p_2": "In my tech stack, I am proficient in JavaScript and skilled in using React and Vue to build responsive and user-friendly front-end interfaces. In terms of backend, I have practical experience with Node.js and the Express framework, and I am knowledgeable about ProgresSQL, MySQL, and MongoDB databases. I am enthusiastic about adopting agile and DevOps practices to optimize the software development process and ensure the quality and performance of the products delivered.",
+    "p_3": "I am very open to remote work, and my primary goal is to find an opportunity that allows me to make my mark in the global tech field. I am working hard to improve my English proficiency, hoping to collaborate seamlessly with international teams through fluent communication.",
+    "p_4": "As a lifelong learner, I improve my professional skills by reading technical articles regularly. In my personal life, I am a passionate League of Legends fan and a movie lover, which keeps me creative and balanced in my busy coding life. I believe that a healthy lifestyle and continuous learning will keep me at my best in my career."
+  },
+  "Skills": {
+    "title": "Skill Experience",
+    "subtitles": [
+      "Front-End Technology",
+      "Front-End Frameworks and Libraries",
+      "Back-End Technology",
+      "DevOps and Cloud Platforms",
+      "Other Technologies and Tools"
+    ]
+  },
+  "Projects": {
+    "title": "Project Experience",
+    "z": "To",
+    "d": "Documentation"
+  }
+}
