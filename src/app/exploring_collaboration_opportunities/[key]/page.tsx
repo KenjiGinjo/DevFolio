@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { getMarkdownData } from "@/utils/readMarkDown";
 const AUTHORS = {
   "4cckN79D": "Rubén Norte",
+  "4ithenJb": "Marco",
 };
 export default async function ECO({ params }: { params: { key: string } }) {
   const { key } = params;
