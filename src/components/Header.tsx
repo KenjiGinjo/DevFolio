@@ -8,7 +8,7 @@ import { useParams, useRouter, usePathname } from "next/navigation";
 type Props = {
   lang: any;
 };
-export default function Header() {
+export default function Header({ noLang }: { noLang?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
   const { lang } = useParams();
@@ -46,34 +46,36 @@ export default function Header() {
           {!lang ? "Kenji Ginjo" : "银城贤志"}
         </div>
       </div>
-      <div
-        style={{
-          cursor: "pointer",
-          width: "1.5rem",
-          height: "1.5rem",
-          display: "flex",
-          backgroundColor: "#000",
-          color: "white",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: "0.7rem",
-          borderRadius: "0.2rem",
-        }}
-        onClick={() => {
-          if (lang) {
-            router.push(
-              `${pathname.replace(lang as string, "").replace("//", "/")}`,
-              {
-                scroll: false,
-              }
-            );
-          } else {
-            router.push(`/zh-CN${pathname}`, { scroll: false });
-          }
-        }}
-      >
-        {lang ? "En" : "简"}
-      </div>
+      {!noLang && (
+        <div
+          style={{
+            cursor: "pointer",
+            width: "1.5rem",
+            height: "1.5rem",
+            display: "flex",
+            backgroundColor: "#000",
+            color: "white",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "0.7rem",
+            borderRadius: "0.2rem",
+          }}
+          onClick={() => {
+            if (lang) {
+              router.push(
+                `${pathname.replace(lang as string, "").replace("//", "/")}`,
+                {
+                  scroll: false,
+                }
+              );
+            } else {
+              router.push(`/zh-CN${pathname}`, { scroll: false });
+            }
+          }}
+        >
+          {lang ? "En" : "简"}
+        </div>
+      )}
     </nav>
   );
 }

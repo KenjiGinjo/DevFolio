@@ -359,3 +359,51 @@ Responsibilities:
 - Handle business negotiations assigned by the company.
   Other work:
 - In the sales process, draw a website wireframe to help customers clarify their needs.
+
+我的博客是使用 Next.js Typescript 开发的，使用 Typescript 的好处是可以让我在开发过程中更好的规范代码，让代码更加的健壮，同时也可以让我在开发过程中更好的理解代码，更好的理解代码的意图，从而更好的开发出更加健壮的代码。
+
+其中项目介绍中的文章内容我采用了 markdown 渲染文章，使用了 Next.js 的静态生成功能，使用了 Next.js 的路由功能，并且是中英文双语的，使用了 Next.js 的 i18n 功能。
+
+使用了 Next.js 的静态生成功能，部署在 Vercel 上，使用了 Vercel 的自动部署功能，只要我提交代码到 github，Vercel 就会自动部署我的博客，非常方便。
+
+开发这个博客是为了让自己更好的学习前端知识，同时也是为了让自己的简历更加的丰富，更加的有说服力。通过博客中的技能树，可以清楚的看到自己的技能树，同时也可以清楚的看到自己的技能树的短板，从而更好的提升自己的技能。
+
+My blog is developed using Next.js Typescript. The advantage of using Typescript is that it allows me to better standardize the code during development, make the code more robust, and also allow me to better understand the code during development and better understand the code. The intention of the code, so as to better develop more robust code.
+
+Among them, the article content in the project introduction is rendered in markdown, using the static generation function of Next.js, using the routing function of Next.js, and is bilingual in Chinese and English, using the i18n function of Next.js.
+
+Using the static generation function of Next.js, deployed on Vercel, using the automatic deployment function of Vercel, as long as I submit the code to github, Vercel will automatically deploy my blog, which is very convenient.
+
+The development of this blog is to allow myself to better learn front-end knowledge, and also to enrich my resume and make it more convincing. Through the skill tree in the blog, you can clearly see my skill tree, and you can also clearly see the shortcomings of my skill tree, so as to better improve my skills.
+
+签订了保密协议 技术等不方便公开
+
+Signed a confidentiality agreement, technology and other inconveniences to disclose
+
+在我在哈尔滨第一职业高级中学的学习期间，我专注于互联网开发技术，涵盖了软件开发的各个方面。通过实践和理论学习，我掌握了 HTML、CSS、JavaScript 等前端技术，以及 C#、ASP.NET 等后端技术。我积极参与学校的项目实践，比如参与开发了一个小型电商网站，负责其购物车功能的实现。
+
+此外，我还特别关注于提升我的编程能力和团队合作技巧。例如，在我们的团队项目中，我负责协调团队成员的工作，确保项目按时完成。
+
+主要成绩：
+
+成功完成多个与网站开发相关的项目，包括设计、编码及测试。
+在课堂上和实际项目中展现出优秀的技术能力和团队协作精神。
+平均成绩保持在班级前 10%，特别在编程和数据库管理课程中表现优异。
+
+During my study at Harbin First Vocational Senior High School, I focused on Internet development technology, covering all aspects of software development. Through practice and theoretical study, I have mastered front-end technologies such as HTML, CSS, JavaScript, and back-end technologies such as C# and ASP.NET. I actively participated in the school's project practice, such as participating in the development of a small e-commerce website, responsible for the implementation of its shopping cart function.
+
+In addition, I also pay special attention to improving my programming skills and teamwork skills. For example, in our team project, I am responsible for coordinating the work of team members to ensure that the project is completed on time.
+
+Main achievements:
+
+Successfully completed multiple projects related to website development, including design, coding and testing.
+Demonstrated excellent technical skills and teamwork spirit in class and practical projects.
+The average score is maintained in the top 10% of the class, especially in programming and database management courses.
+
+我取得了 3.5 的 GPA，特别在计算机科学课程中表现突出。
+
+I achieved a GPA of 3.5, especially in computer science courses.
+
+在学校期间，我热衷于电子竞技，因此我组建并领导了一个穿越火线游戏战队。这个经历不仅是我的兴趣延伸，更是一个展现领导力和团队合作能力的机会。作为队长，我负责招募队员、安排训练计划以及组织参与比赛。
+
+During my school days, I was passionate about e-sports, so I formed and led a CrossFire game team. This experience is not only an extension of my interests, but also an opportunity to demonstrate leadership and teamwork. As the captain, I am responsible for recruiting team members, arranging training plans and organizing participation in competitions.
