@@ -1,47 +1,3 @@
-import IconChrome from "../icons/chrome.svg";
-import IconCss3Alt from "../icons/css3-alt.svg";
-import IconFigma from "../icons/figma.svg";
-import IconGit from "../icons/git.svg";
-import IconGitHub from "../icons/github.svg";
-import IconHtml5 from "../icons/html5.svg";
-import IconJs from "../icons/js.svg";
-import IconNode from "../icons/node.svg";
-import IconNpm from "../icons/npm.svg";
-import IconReact from "../icons/react.svg";
-import IconTerminal from "../icons/terminal-solid.svg";
-import IconUniversalAccessSolid from "../icons/universal-access-solid.svg";
-import IconVueJs from "../icons/vuejs.svg";
-import IconTs from "../icons/logo-ts-svgrepo-com.svg";
-import IconWebFrontendBasics from "../icons/WebFrontendBasics.svg";
-import IconNextJs from "../icons/nextjs-fill-svgrepo-com.svg";
-import IconGraphQL from "../icons/graphql-svgrepo-com.svg";
-import IconApolloGraphQL from "../icons/apollographql-svgrepo-com.svg";
-import IconJava from "../icons/java-16-svgrepo-com.svg";
-import IconPhp from "../icons/php-16-svgrepo-com.svg";
-import IconBash from "../icons/bash01-svgrepo-com.svg";
-import IconDevOps from "../icons/devops-svgrepo-com.svg";
-import IconGoogleCloudPlatform from "../icons/google-cloud-svgrepo-com.svg";
-import IconAlibabaCloudPlatform from "../icons/aliyun-svgrepo-com.svg";
-import IconMongoDb from "../icons/mongodb-svgrepo-com.svg";
-import IconMySQL from "../icons/mysql-svgrepo-com.svg";
-import IconNestjs from "../icons/nestjs-svgrepo-com.svg";
-import IconNuxtJs from "../icons/nuxtjs-svgrepo-com.svg";
-import IconPostgreSQL from "../icons/postgresql-svgrepo-com.svg";
-import IconPython from "../icons/python-127-svgrepo-com.svg";
-import IconRedis from "../icons/redis-svgrepo-com.svg";
-import IconRedux from "../icons/redux-svgrepo-com.svg";
-import IconRESTAPI from "../icons/rest-api-svgrepo-com.svg";
-import IconRust from "../icons/rust-svgrepo-com.svg";
-import IconSocketIo from "../icons/socket-dot-io-svgrepo-com.svg";
-import IconTailwindCSS from "../icons/tailwind-css-svgrepo-com.svg";
-import IconTensorFlow from "../icons/tensorflow-svgrepo-com.svg";
-import IconLess from "../icons/less-svgrepo-com.svg";
-import IconSass from "../icons/sass-svgrepo-com.svg";
-import IconWebPack from "../icons/webpack-svgrepo-com.svg";
-import IconDocker from "../icons/docker-svgrepo-com.svg";
-import IconOpenai from "../icons/openai-svgrepo-com.svg";
-import IconKotlin from "../icons/kotlin-svgrepo-com.svg";
-
 type ExpirienceItems = {
   tip: string;
   tipEn: string;
@@ -49,7 +5,6 @@ type ExpirienceItems = {
 }[];
 type Expirience = {
   [key: string]: {
-    icon: any;
     iconDimensions?: [number, number];
     alias: string;
     aliasInZh: string;
@@ -59,7 +14,6 @@ type Expirience = {
 };
 export const frontEnd: Expirience = {
   Javascript: {
-    icon: IconJs,
     baseLevel: 90,
     alias: "JavaScript",
     aliasInZh: "JavaScript",
@@ -85,7 +39,6 @@ export const frontEnd: Expirience = {
     ],
   },
   Typescript: {
-    icon: IconTs,
     iconDimensions: [75, 75],
     baseLevel: 78,
     alias: "Typescript",
@@ -147,7 +100,6 @@ export const frontEnd: Expirience = {
     ],
   },
   Html: {
-    icon: IconHtml5,
     baseLevel: 90,
     alias: "Html",
     aliasInZh: "Html",
@@ -167,7 +119,6 @@ export const frontEnd: Expirience = {
     ],
   },
   Css: {
-    icon: IconCss3Alt,
     baseLevel: 85,
     alias: "Css",
     aliasInZh: "Css",
@@ -187,7 +138,6 @@ export const frontEnd: Expirience = {
     ],
   },
   Less: {
-    icon: IconLess,
     baseLevel: 20,
     alias: "Less",
     aliasInZh: "Less",
@@ -212,7 +162,6 @@ export const frontEnd: Expirience = {
     ],
   },
   Sass: {
-    icon: IconSass,
     baseLevel: 20,
     alias: "Sass",
     aliasInZh: "Sass",
@@ -237,7 +186,6 @@ export const frontEnd: Expirience = {
     ],
   },
   TailwindCSS: {
-    icon: IconTailwindCSS,
     baseLevel: 10,
     alias: "TailwindCSS",
     aliasInZh: "TailwindCSS",
@@ -256,7 +204,6 @@ export const frontEnd: Expirience = {
     ],
   },
   WebPack: {
-    icon: IconWebPack,
     baseLevel: 5,
     alias: "WebPack",
     aliasInZh: "WebPack",
@@ -277,7 +224,6 @@ export const frontEnd: Expirience = {
 };
 export const frontEndFrameworksAndLibraries: Expirience = {
   React: {
-    icon: IconReact,
     baseLevel: 50,
     alias: "React",
     aliasInZh: "React",
@@ -315,7 +261,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   ReactNative: {
-    icon: "",
     baseLevel: 50,
     alias: "RN",
     aliasInZh: "RN",
@@ -334,7 +279,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   Redux: {
-    icon: IconRedux,
     baseLevel: 10,
     alias: "Redux",
     aliasInZh: "Redux",
@@ -353,7 +297,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   Vue: {
-    icon: IconVueJs,
     baseLevel: 65,
     alias: "Vue",
     aliasInZh: "Vue",
@@ -401,7 +344,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   VueX: {
-    icon: "",
     baseLevel: 30,
     alias: "VueX",
     aliasInZh: "VueX",
@@ -424,7 +366,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   Pinia: {
-    icon: "",
     baseLevel: 40,
     alias: "Pinia",
     aliasInZh: "Pinia",
@@ -442,7 +383,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   NuxtJS: {
-    icon: IconNuxtJs,
     baseLevel: 18,
     alias: "NuxtJS",
     aliasInZh: "NuxtJS",
@@ -461,7 +401,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   Nextjs: {
-    icon: IconNextJs,
     baseLevel: 50,
     alias: "Nextjs",
     aliasInZh: "Nextjs",
@@ -498,7 +437,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
     ],
   },
   SolidJS: {
-    icon: "",
     baseLevel: 30,
     alias: "SolidJS",
     aliasInZh: "SolidJS",
@@ -519,7 +457,6 @@ export const frontEndFrameworksAndLibraries: Expirience = {
 };
 export const backEnd: Expirience = {
   Nodejs: {
-    icon: IconNode,
     baseLevel: 60,
     alias: "Nodejs",
     aliasInZh: "Nodejs",
@@ -568,7 +505,6 @@ export const backEnd: Expirience = {
     ],
   },
   Express: {
-    icon: "",
     baseLevel: 30,
     alias: "Express",
     aliasInZh: "Express",
@@ -600,7 +536,6 @@ export const backEnd: Expirience = {
     ],
   },
   Koa: {
-    icon: "",
     baseLevel: 10,
     alias: "Koa2",
     aliasInZh: "Koa2",
@@ -619,7 +554,6 @@ export const backEnd: Expirience = {
     ],
   },
   NestJS: {
-    icon: IconNestjs,
     baseLevel: 30,
     alias: "NestJS",
     aliasInZh: "NestJS",
@@ -639,7 +573,6 @@ export const backEnd: Expirience = {
     ],
   },
   MongoDB: {
-    icon: IconMongoDb,
     baseLevel: 20,
     alias: "MongoDB",
     aliasInZh: "MongoDB",
@@ -671,7 +604,6 @@ export const backEnd: Expirience = {
     ],
   },
   MySQL: {
-    icon: IconMySQL,
     baseLevel: 25,
     alias: "MySQL",
     aliasInZh: "MySQL",
@@ -697,7 +629,6 @@ export const backEnd: Expirience = {
     ],
   },
   PostgreSQL: {
-    icon: IconPostgreSQL,
     baseLevel: 40,
     alias: "PostgreSQL",
     aliasInZh: "PostgreSQL",
@@ -735,7 +666,6 @@ export const backEnd: Expirience = {
     ],
   },
   Python: {
-    icon: IconPython,
     baseLevel: 10,
     alias: "Python",
     aliasInZh: "Python",
@@ -754,7 +684,6 @@ export const backEnd: Expirience = {
     ],
   },
   JAVA: {
-    icon: IconJava,
     baseLevel: 20,
     alias: "JAVA",
     aliasInZh: "JAVA",
@@ -786,7 +715,6 @@ export const backEnd: Expirience = {
     ],
   },
   Kotlin: {
-    icon: IconKotlin,
     baseLevel: 12,
     alias: "Kotlin",
     aliasInZh: "Kotlin",
@@ -812,7 +740,6 @@ export const backEnd: Expirience = {
     ],
   },
   PHP: {
-    icon: IconPhp,
     baseLevel: 35,
     alias: "PHP",
     aliasInZh: "PHP",
@@ -847,7 +774,6 @@ export const backEnd: Expirience = {
 
 export const devOpsAndCloud: Expirience = {
   Docker: {
-    icon: IconDocker,
     baseLevel: 5,
     alias: "Docker",
     aliasInZh: "Docker",
@@ -873,7 +799,6 @@ export const devOpsAndCloud: Expirience = {
     ],
   },
   GoogleCloudPlatform: {
-    icon: IconGoogleCloudPlatform,
     baseLevel: 10,
     alias: "Google Cloud",
     aliasInZh: "Google Cloud",
@@ -905,7 +830,6 @@ export const devOpsAndCloud: Expirience = {
     ],
   },
   AlibabaCloudPlatform: {
-    icon: IconAlibabaCloudPlatform,
     baseLevel: 40,
     alias: "Aliyun",
     aliasInZh: "Aliyun",
@@ -931,7 +855,6 @@ export const devOpsAndCloud: Expirience = {
     ],
   },
   DevOps: {
-    icon: IconDevOps,
     baseLevel: 30,
     alias: "DevOps",
     aliasInZh: "DevOps",
@@ -959,7 +882,6 @@ export const devOpsAndCloud: Expirience = {
 };
 export const other: Expirience = {
   Git: {
-    icon: IconGit,
     baseLevel: 45,
     alias: "Git",
     aliasInZh: "Git",
@@ -978,7 +900,6 @@ export const other: Expirience = {
     ],
   },
   Github: {
-    icon: IconGitHub,
     baseLevel: 45,
     alias: "Github",
     aliasInZh: "Github",
@@ -1002,7 +923,6 @@ export const other: Expirience = {
     ],
   },
   Figma: {
-    icon: IconFigma,
     baseLevel: 60,
     alias: "Figma",
     aliasInZh: "Figma",
@@ -1028,7 +948,6 @@ export const other: Expirience = {
     ],
   },
   Chrome: {
-    icon: IconChrome,
     baseLevel: 70,
     alias: "Chrome DevTools",
     aliasInZh: "Chrome DevTools",
@@ -1048,7 +967,6 @@ export const other: Expirience = {
     ],
   },
   GraphQL: {
-    icon: IconGraphQL,
     baseLevel: 25,
     alias: "GraphQL",
     aliasInZh: "GraphQL",
@@ -1067,7 +985,6 @@ export const other: Expirience = {
     ],
   },
   ApolloGraphQL: {
-    icon: IconApolloGraphQL,
     baseLevel: 15,
     alias: "ApolloGraphQL",
     aliasInZh: "ApolloGraphQL",
@@ -1087,7 +1004,6 @@ export const other: Expirience = {
     ],
   },
   TensorFlowJs: {
-    icon: IconTensorFlow,
     baseLevel: 2,
     alias: "TensorFlowJs",
     aliasInZh: "TensorFlowJs",
@@ -1107,7 +1023,6 @@ export const other: Expirience = {
     ],
   },
   Redis: {
-    icon: IconRedis,
     baseLevel: 10,
     alias: "Redis",
     aliasInZh: "Redis",
@@ -1127,7 +1042,6 @@ export const other: Expirience = {
     ],
   },
   SocketIO: {
-    icon: IconSocketIo,
     baseLevel: 20,
     alias: "SocketIO",
     aliasInZh: "SocketIO",
@@ -1153,7 +1067,6 @@ export const other: Expirience = {
     ],
   },
   RESTAPI: {
-    icon: IconRESTAPI,
     baseLevel: 90,
     alias: "REST API",
     aliasInZh: "REST API",
@@ -1178,7 +1091,6 @@ export const other: Expirience = {
     ],
   },
   BashShell: {
-    icon: IconBash,
     baseLevel: 5,
     alias: "Bash & Shell",
     aliasInZh: "Bash & Shell",
@@ -1192,7 +1104,6 @@ export const other: Expirience = {
     ],
   },
   Npm: {
-    icon: IconNpm,
     baseLevel: 30,
     alias: "Npm",
     aliasInZh: "Npm",
@@ -1206,7 +1117,6 @@ export const other: Expirience = {
     ],
   },
   Rust: {
-    icon: IconRust,
     baseLevel: 8,
     alias: "Rust",
     aliasInZh: "Rust",
@@ -1220,7 +1130,6 @@ export const other: Expirience = {
     ],
   },
   Terminal: {
-    icon: IconTerminal,
     baseLevel: 50,
     alias: "Terminal",
     aliasInZh: "Terminal",
@@ -1234,7 +1143,6 @@ export const other: Expirience = {
     ],
   },
   universalAccessSolid: {
-    icon: IconUniversalAccessSolid,
     baseLevel: 30,
     alias: "Universal Access",
     aliasInZh: "Universal Access",
@@ -1248,7 +1156,6 @@ export const other: Expirience = {
     ],
   },
   WebFrontBasics: {
-    icon: IconWebFrontendBasics,
     baseLevel: 95,
     alias: "Web Front Basics",
     aliasInZh: "Web Front Basics",
@@ -1262,7 +1169,6 @@ export const other: Expirience = {
     ],
   },
   OpenAi: {
-    icon: IconOpenai,
     baseLevel: 55,
     alias: "Open Ai",
     aliasInZh: "Open Ai",
@@ -1276,7 +1182,6 @@ export const other: Expirience = {
     ],
   },
   Regex: {
-    icon: "",
     baseLevel: 35,
     alias: "Regex",
     aliasInZh: "正则表达式",
@@ -1290,7 +1195,6 @@ export const other: Expirience = {
     ],
   },
   Linux: {
-    icon: "",
     baseLevel: 35,
     alias: "Linux",
     aliasInZh: "Linux",

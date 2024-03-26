@@ -1,0 +1,19 @@
+{
+  "title": "Kenji Ginjon - FullStack Developer with a Focus on Frontend",
+  "description": "A FullStack Developer specializing in frontend technologies, especially within the React ecosystem. I am currently working on developing an AI-Powered Interactive Video Creation Platform.",
+  "applicationName": "KenjiGinjoPortfolio",
+  "keywords": [
+    "React Development",
+    "Next.js Expert",
+    "WebGL Development",
+    "Frontend API Integration",
+    "Video Processing Solutions",
+    "Interactive Video Creation",
+    "Frontend Performance Optimization"
+  ],
+  "authors": [
+    { "name": "Kenji Ginjo", "url": "https://github.com/kenjiginjo" }
+  ],
+  "creator": "Kenji Ginjo, using Visual Studio Code",
+  "publisher": "Kenji Ginjo"
+}

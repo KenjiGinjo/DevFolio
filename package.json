@@ -3,30 +3,46 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db:rebuild": "prisma migrate dev --name init --skip-generate",
+    "db:reset": "prisma migrate reset --force",
+    "db:client": "prisma studio",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node --transpile-only ./prisma/seed.ts"
+  },
   "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "@vercel/speed-insights": "^1.0.10",
+    "accept-language": "^3.0.18",
     "gray-matter": "^4.0.3",
+    "i18next": "^23.10.0",
+    "i18next-resources-to-backend": "^1.2.0",
     "next": "14.0.1",
     "react": "^18",
     "react-18-image-lightbox": "^5.1.4",
     "react-dom": "^18",
+    "react-i18next": "^14.0.5",
+    "react-icons": "^5.0.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.11.20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.17",
-    "daisyui": "^4.7.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "prisma": "^5.10.2",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

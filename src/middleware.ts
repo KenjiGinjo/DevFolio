@@ -1,37 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const locales = ["en-US", "zh-CN"];
+import acceptLanguage from "accept-language";
+import { fallbackLng, languages, cookieName } from "./app/i18n/settings";
 
-function getLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get("accept-language");
-  if (!acceptLanguage) {
-    return locales[0];
-  }
-
-  const requestedLocales = acceptLanguage
-    .split(",")
-    .map((lang) => lang.split(";")[0]);
-  const matchedLocale =
-    locales.find((locale) => requestedLocales.includes(locale)) || locales[0];
-  return matchedLocale;
-}
-
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
-  if (pathnameHasLocale) return;
-
-  const locale = getLocale(request);
-  if (locale === "en-US") {
-    return NextResponse.next();
-  }
-
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
-}
+acceptLanguage.languages(languages as any);
 
 export const config = {
-  matcher: ["/((?!_next).*)"],
+  matcher: [
+    "/((?!api|admin|splash_screens*|images*|manifest.json|_next/static|_next/image|assets|favicon.ico|sw.js).*)",
+  ],
 };
+
+export function middleware(req: NextRequest) {
+  let lang;
+  if (req.cookies.has(cookieName))
+    lang = acceptLanguage.get(req.cookies.get(cookieName)?.value);
+  if (!lang) lang = acceptLanguage.get(req.headers.get("Accept-Language"));
+  if (!lang) lang = fallbackLng;
+
+  // Redirect if lang in path is not supported
+  if (
+    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
+    !req.nextUrl.pathname.startsWith("/_next")
+  ) {
+    return NextResponse.redirect(
+      new URL(`/${lang}${req.nextUrl.pathname}`, req.url)
+    );
+  }
+
+  if (req.headers.has("referer")) {
+    const referer = req.headers.get("referer");
+    if (referer) {
+      const refererUrl = new URL(referer);
+      const lngInReferer = languages.find((l) =>
+        refererUrl.pathname.startsWith(`/${l}`)
+      );
+      const response = NextResponse.next();
+      if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
+      return response;
+    }
+  }
+
+  return NextResponse.next();
+}
