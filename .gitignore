@@ -13,12 +13,18 @@
 /.next/
 /out/
 
+# local env files
+.env*.local
+.env
+
+
 # production
 /build
 
 # misc
 .DS_Store
 *.pem
+
 
 # debug
 npm-debug.log*
@@ -36,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 
 TODO/
+
+
+.vscode
