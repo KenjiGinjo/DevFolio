@@ -3,7 +3,7 @@ import Skills from "@/components/Skills";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import Image from "next/image";
-import { useTranslation } from "../i18n";
+import { useTranslation } from "../../i18n";
 import type { Metadata, ResolvingMetadata } from "next";
 import { appleTouchStartupImages } from "@/assets/apple-touch-startup-images";
 import type { Viewport } from "next";

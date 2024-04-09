@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import acceptLanguage from "accept-language";
-import { fallbackLng, languages, cookieName } from "./app/i18n/settings";
+import { fallbackLng, languages, cookieName } from "./i18n/settings";
 
-acceptLanguage.languages(languages as any);
+acceptLanguage.languages(languages);
 
 export const config = {
   matcher: [
@@ -24,7 +24,7 @@ export function middleware(req: NextRequest) {
     !req.nextUrl.pathname.startsWith("/_next")
   ) {
     return NextResponse.redirect(
-      new URL(`/${lang}${req.nextUrl.pathname}`, req.url)
+      new URL(`/${lang}${req.nextUrl.pathname}`, req.url),
     );
   }
 
@@ -33,7 +33,7 @@ export function middleware(req: NextRequest) {
     if (referer) {
       const refererUrl = new URL(referer);
       const lngInReferer = languages.find((l) =>
-        refererUrl.pathname.startsWith(`/${l}`)
+        refererUrl.pathname.startsWith(`/${l}`),
       );
       const response = NextResponse.next();
       if (lngInReferer) response.cookies.set(cookieName, lngInReferer);

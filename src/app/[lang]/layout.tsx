@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import "react-18-image-lightbox/style.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { languages } from "../i18n/settings";
+import { languages } from "../../i18n/settings";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 

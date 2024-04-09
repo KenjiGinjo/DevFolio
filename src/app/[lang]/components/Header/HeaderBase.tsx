@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Language } from "../../../i18n/settings";
+import { Language } from "../../../../i18n/settings";
 import { TFunction } from "i18next";
 import { Avatar } from "@/components/Avatar";
 import { fonts } from "@/lib/fonts";

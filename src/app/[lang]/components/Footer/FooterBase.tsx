@@ -1,4 +1,4 @@
-import { Language } from "../../../i18n/settings";
+import { Language } from "../../../../i18n/settings";
 import { TFunction } from "i18next";
 type FooterBaseProps = {
   t: TFunction<any, string>;

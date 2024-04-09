@@ -5,8 +5,13 @@ const nextConfig = {
     domains: ["avatars.githubusercontent.com"],
   },
   experimental: {
+    typedRoutes: true,
     serverComponentsExternalPackages: ["@prisma/client"],
   },
+  // i18n: {
+  //   locales: ["en", "zh-CN"],
+  //   defaultLocale: "en",
+  // }
 }
 
 module.exports = nextConfig;
