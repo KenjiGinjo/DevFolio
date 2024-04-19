@@ -33,7 +33,7 @@ async function main() {
       await prisma.skill.create({
         data: {
           name: key,
-          level: value[key].baseLevel,
+          score: value[key].baseLevel,
           SkillTranslation: {
             create: SkillTranslation,
           },
