@@ -3,20 +3,29 @@ import React from "react";
 import { Socket, io } from "socket.io-client";
 import { useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
+import {
+  AdminClientToServerEvents,
+  AdminServerToClientEvents,
+} from "@/socket/types";
 
-const SocketContext = React.createContext<Socket | null>(null);
+type AdminSocketContextType = Socket<
+  AdminServerToClientEvents,
+  AdminClientToServerEvents
+> | null;
 
-export const SocketProvider = ({ children }: any) => {
+const AdminSocketContext = React.createContext<AdminSocketContextType>(null);
+
+export const AdminSocketProvider = ({ children }: any) => {
   const { status } = useSession();
 
-  const [socket, setSocket] = React.useState<Socket | null>(null);
+  const [socket, setSocket] = React.useState<AdminSocketContextType>(null);
 
   const [isConnected, setIsConnected] = React.useState(false);
   const [transport, setTransport] = React.useState("N/A");
 
   React.useEffect(() => {
     if (status === "authenticated") {
-      const s = io("/client");
+      const s = io("/admin");
 
       const onConnect = () => {
         setSocket(s);
@@ -32,27 +41,29 @@ export const SocketProvider = ({ children }: any) => {
       const onUpgrade = (transport) => {
         setTransport(transport.name);
       };
+
       const onException = (e) => {
         console.log(e);
         // TODO: handle exception
       };
+
       s.on("connect", onConnect);
       s.on("disconnect", onDisconnect);
-      s.on("exception", onException);
       s.io.engine.on("upgrade", onUpgrade);
+      s.on("exception", onException);
 
       return () => {
         s.off("connect", onConnect);
         s.off("disconnect", onDisconnect);
-        s.off("exception", onException);
         s.io.engine.off("upgrade", onUpgrade);
+        s.off("exception", onException);
         s.close();
       };
     }
   }, [status]);
 
   return (
-    <SocketContext.Provider value={socket}>
+    <AdminSocketContext.Provider value={socket}>
       {children}
       <div
         className={cn(
@@ -62,8 +73,8 @@ export const SocketProvider = ({ children }: any) => {
       >
         {transport}
       </div>
-    </SocketContext.Provider>
+    </AdminSocketContext.Provider>
   );
 };
 
-export default SocketContext;
+export default AdminSocketContext;

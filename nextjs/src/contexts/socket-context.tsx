@@ -3,26 +3,26 @@ import React from "react";
 import { Socket, io } from "socket.io-client";
 import { useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
+import { ClientToServerEvents, ServerToClientEvents } from "@/socket/types";
 
-const AdminSocketContext = React.createContext<Socket | null>(null);
+type SocketContextType = Socket<
+  ServerToClientEvents,
+  ClientToServerEvents
+> | null;
 
-export const AdminSocketProvider = ({ children }: any) => {
+const SocketContext = React.createContext<SocketContextType>(null);
+
+export const SocketProvider = ({ children }: any) => {
   const { status } = useSession();
 
-  const [socket, setSocket] = React.useState<Socket | null>(null);
+  const [socket, setSocket] = React.useState<SocketContextType>(null);
 
   const [isConnected, setIsConnected] = React.useState(false);
   const [transport, setTransport] = React.useState("N/A");
 
   React.useEffect(() => {
     if (status === "authenticated") {
-      const s = io("/admin", {
-        reconnection: true,
-        reconnectionAttempts: Infinity,
-        reconnectionDelay: 1000,
-        reconnectionDelayMax: 5000,
-        randomizationFactor: 0.5,
-      });
+      const s = io("/client");
 
       const onConnect = () => {
         setSocket(s);
@@ -38,29 +38,27 @@ export const AdminSocketProvider = ({ children }: any) => {
       const onUpgrade = (transport) => {
         setTransport(transport.name);
       };
-
       const onException = (e) => {
         console.log(e);
         // TODO: handle exception
       };
-
       s.on("connect", onConnect);
       s.on("disconnect", onDisconnect);
-      s.io.engine.on("upgrade", onUpgrade);
       s.on("exception", onException);
+      s.io.engine.on("upgrade", onUpgrade);
 
       return () => {
         s.off("connect", onConnect);
         s.off("disconnect", onDisconnect);
-        s.io.engine.off("upgrade", onUpgrade);
         s.off("exception", onException);
+        s.io.engine.off("upgrade", onUpgrade);
         s.close();
       };
     }
   }, [status]);
 
   return (
-    <AdminSocketContext.Provider value={socket}>
+    <SocketContext.Provider value={socket}>
       {children}
       <div
         className={cn(
@@ -70,8 +68,8 @@ export const AdminSocketProvider = ({ children }: any) => {
       >
         {transport}
       </div>
-    </AdminSocketContext.Provider>
+    </SocketContext.Provider>
   );
 };
 
-export default AdminSocketContext;
+export default SocketContext;

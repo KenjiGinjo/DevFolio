@@ -17,7 +17,7 @@ export const Chat = ({ user, agent }: ChatProps) => {
   const socket = useSocket();
   const [messages, setMessages] = React.useState<ChatMessage[]>([]);
   const [input, setInput] = React.useState("");
-  // TODO：切走的时候要断开socket 回来的时候在连接
+  // TODO： 切走的时候要断开socket 回来的时候在连接
   // TODO： 发送的消息要存起来 对吧
   // TODO： 消息要有提示音
   // TODO： 消息要有loading状态
@@ -27,27 +27,29 @@ export const Chat = ({ user, agent }: ChatProps) => {
   // TODO： 消息要验证内容是否安全
   React.useEffect(() => {
     if (socket) {
-      socket.on("receive-message", ({ message }, callback) => {
+      socket.on("receiveMessage", ({ user, message }, callback) => {
         setMessages((prev) => {
-          console.log(prev);
           return [...prev, { role: "agent", content: message }];
         });
-        callback("Message received successfully");
+        callback(user);
       });
     }
+    console.log("socket", socket);
   }, [socket]);
 
   const sendMessage = () => {
     if (socket) {
-      socket.timeout(2000).emit("message", input, (err, response) => {
-        if (err) {
-          console.error(err);
-          return;
-        } else {
-          setMessages([...messages, { role: "user", content: input }]);
-          setInput("");
-        }
-      });
+      socket
+        .timeout(2000)
+        .emit("message", { user, message: input }, (err, response) => {
+          if (err) {
+            console.error(err);
+            return;
+          } else {
+            setMessages([...messages, { role: "user", content: input }]);
+            setInput("");
+          }
+        });
     }
   };
 

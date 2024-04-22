@@ -26,10 +26,10 @@ export const Chat = ({ me }: ChatProps) => {
 
   React.useEffect(() => {
     if (socket) {
-      socket.on("receive-message", ({ message, user }, callback) => {
+      socket.on("receiveMessage", ({ message, user }, callback) => {
         setUser(user);
         setMessages([...messages, { role: "agent", content: message }]);
-        callback("Message received successfully");
+        callback({ userId: user.id });
       });
     }
   }, [socket]);
@@ -38,19 +38,15 @@ export const Chat = ({ me }: ChatProps) => {
     if (socket) {
       socket
         .timeout(2000)
-        .emit(
-          "message",
-          { userId: user.id, message: input },
-          (err, response) => {
-            if (err) {
-              console.error(err);
-              return;
-            } else {
-              setMessages([...messages, { role: "user", content: input }]);
-              setInput("");
-            }
-          },
-        );
+        .emit("message", { user, message: input }, (err, responses) => {
+          console.log(err);
+          console.log(responses);
+          if (err) return;
+          {
+            setMessages([...messages, { role: "user", content: input }]);
+            setInput("");
+          }
+        });
     }
   };
 

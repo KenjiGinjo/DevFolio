@@ -36,18 +36,12 @@ export const verifySession = async (socket: Socket) => {
   return user;
 };
 
-export const createOrGetUserRoom = async (userId: string) => {
-  const room = await db.room.findFirst({
-    where: { userId },
-  });
-  if (room) {
-    return room;
-  }
-  const newRoom = await db.room.create({
-    data: {
-      userId,
-    },
+export const sendException = (socket: Socket, e: any) => {
+  socket.emit("exception", {
+    message: e.message,
+    code: e.code,
+    status: e.status,
   });
 
-  return newRoom;
+  socket.disconnect();
 };
