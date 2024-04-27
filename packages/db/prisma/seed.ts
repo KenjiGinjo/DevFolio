@@ -5,7 +5,7 @@ import {
   backEnd,
   devOpsAndCloud,
   other,
-} from "../src/data/skills";
+} from "./data/skills";
 
 const prisma = new PrismaClient();
 async function main() {

@@ -1,5 +1,5 @@
 {
-  "name": "devfolio",
+  "name": "@devfolio/web",
   "version": "0.1.0",
   "private": true,
   "author": {
@@ -10,7 +10,7 @@
     "db:rebuild": "prisma migrate dev --name init",
     "db:reset": "prisma migrate reset --force",
     "db:client": "prisma studio",
-    "dev": "nodemon",
+    "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.mjs",
     "lint": "next lint",
