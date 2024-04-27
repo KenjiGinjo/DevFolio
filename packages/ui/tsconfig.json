@@ -15,7 +15,11 @@
     "isolatedModules": true,
     "noUncheckedIndexedAccess": true,
     "experimentalDecorators": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src"]
 }

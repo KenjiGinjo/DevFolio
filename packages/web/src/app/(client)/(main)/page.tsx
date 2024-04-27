@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Features } from "@/components/features";
 import { auth } from "@/auth";
 import SessionData from "@/components/session-data";
+import {Adksfhwed} from "@devfolio/ui"
 
 export default async function IndexPage() {
   const session = await auth();
@@ -13,6 +14,7 @@ export default async function IndexPage() {
 
   return (
     <>
+    <Adksfhwed />
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
           <SessionData session={session} />
