@@ -1,8 +1,10 @@
 {
+  "name": "@devfolio/api",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/app.ts"
   },
   "dependencies": {
+    "@devfolio/db": "workspace:*",
     "hono": "^4.2.6"
   },
   "devDependencies": {

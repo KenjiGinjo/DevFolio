@@ -1,0 +1,8 @@
+
+{
+  "name": "devfolio-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@devfolio/env",
+  "main": "./src/index.ts",
+  "private": true,
+  "dependencies": {
+    "std-env": "^3.7.0",
+    "znv": "^0.4.0",
+    "zod": "3.22.4"
+  }
+}
