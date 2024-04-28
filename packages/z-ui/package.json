@@ -1,5 +1,5 @@
 {
-  "name": "@devfolio/ui",
+  "name": "@devfolio/zui",
   "main": "./src/index.ts",
   "private": true,
   "dependencies": {

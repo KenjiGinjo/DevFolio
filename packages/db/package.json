@@ -1,14 +1,24 @@
 {
   "name": "@devfolio/db",
   "main": "./src/index.ts",
+  "scripts": {
+    "db:rebuild": "prisma migrate dev --name init",
+    "db:reset": "prisma migrate reset --force",
+    "db:client": "prisma studio"
+  },
+  "prisma": {
+    "seed": "ts-node --transpile-only ./prisma/seed.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "^5.12.1"
+    "prisma": "^5.12.1",
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@prisma/client": "^5.10.2",
     "@devfolio/env": "workspace:*",
     "@paralleldrive/cuid2": "^2.2.2",
     "@xstools/utility": "^0.13.0",

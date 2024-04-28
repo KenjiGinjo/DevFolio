@@ -1,0 +1,6 @@
+{
+  "name": "@devfolio/ztools",
+  "main": "./src/index.ts",
+  "private": true,
+  "dependencies": {}
+}
