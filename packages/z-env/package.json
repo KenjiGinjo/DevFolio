@@ -1,7 +1,13 @@
 {
   "name": "@devfolio/env",
-  "main": "./src/index.ts",
   "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "format": "prettier . --write",
+    "lint": "eslint .  --cache",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "std-env": "^3.7.0",
     "znv": "^0.4.0",

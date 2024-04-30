@@ -1,8 +1,21 @@
-
 {
   "name": "devfolio-monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "codestilo": "link:codestilo",
+    "eslint": "^9.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.1.0",
+    "typescript-eslint": "^7.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-multiline-arrays": "^3.0.4",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.14",
+    "prettier-plugin-prisma": "^5.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.13"
+  }
 }
