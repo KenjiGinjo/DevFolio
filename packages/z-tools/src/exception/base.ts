@@ -6,7 +6,7 @@ export class BaseException extends Error {
     super(message);
 
     this.status = status;
-    const normalizedCode = this.title(code.replace(/Exception$/, ""));
+    const normalizedCode = this.title(code.replace(/Exception$/, ''));
     this.code = this.snake(`E ${normalizedCode}`).toUpperCase();
 
     if (Error.captureStackTrace) {
@@ -15,16 +15,13 @@ export class BaseException extends Error {
   }
 
   private title(str: string): string {
-    return str.replace(
-      /\w\S*/g,
-      (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
-    );
+    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
   }
 
   private snake(str: string): string {
     return str
-      .replace(/\W+/g, "_")
-      .replace(/^_+|_+$/g, "")
+      .replace(/\W+/g, '_')
+      .replace(/^_+|_+$/g, '')
       .toLowerCase();
   }
 }

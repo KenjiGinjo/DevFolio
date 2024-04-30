@@ -1,6 +1,12 @@
 {
   "name": "@devfolio/ztools",
-  "main": "./src/index.ts",
   "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "format": "prettier . --write",
+    "lint": "eslint .  --cache",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {}
 }
