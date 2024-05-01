@@ -5,9 +5,8 @@
   },
   "dependencies": {
     "@devfolio/db": "workspace:*",
+    "@devfolio/service": "workspace:*",
+    "@devfolio/tool": "workspace:*",
     "hono": "^4.2.6"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
   }
 }
