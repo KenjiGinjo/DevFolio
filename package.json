@@ -5,7 +5,13 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "scripts": {
+    "dev": "bun --filter '*' dev"
+  },
+  "dependencies": {
+    "zod": "3.22.4",
+    "zod-validation-error": "^3.3.0"
+  },
   "devDependencies": {
     "codestilo": "^0.0.4",
     "codestilo-ts": "0.0.1",

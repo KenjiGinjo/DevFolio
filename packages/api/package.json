@@ -7,7 +7,8 @@
     "@devfolio/db": "workspace:*",
     "@devfolio/service": "workspace:*",
     "@devfolio/tool": "workspace:*",
-    "@hono/zod-validator": "^0.2.1",
-    "hono": "^4.2.6"
+    "@devfolio/validator": "workspace:*",
+    "@hono/zod-validator": "0.2.1",
+    "hono": "4.2.6"
   }
 }

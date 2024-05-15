@@ -10,7 +10,6 @@
     "mikestead.dotenv",
     "stringham.move-ts",
     "christian-kohler.npm-intellisense",
-    "christian-kohler.path-intellisense",
-    "yoavbls.pretty-ts-errors"
+    "christian-kohler.path-intellisense"
   ]
 }
