@@ -11,6 +11,8 @@
     "check-type": "tsc --noEmit"
   },
   "dependencies": {
+    "@devfolio/enum": "workspace:*",
+    "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",

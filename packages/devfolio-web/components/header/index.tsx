@@ -1,12 +1,11 @@
-import type { Lang } from '@/config'
-import { DEFAULT_LANG } from '@/config'
 import { dictionaries } from '@/dictionaries'
+import { fallbackLng, type Language } from '@/dictionaries/settings'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NavLintItem } from './nav-link-item'
 
 interface HeaderProps {
-  lang: Lang
+  lang: Language
 }
 export async function Header({ lang }: HeaderProps) {
   const localeHeader = await dictionaries.header[lang]()
@@ -36,7 +35,7 @@ export async function Header({ lang }: HeaderProps) {
           </Link>
           <nav className="hidden gap-10 md:flex">
             {list?.map((item) => {
-              const href = `${lang === DEFAULT_LANG ? '' : `/${lang}`}${item.href}`
+              const href = `${lang === fallbackLng ? '' : `/${lang}`}${item.href}`
               return <NavLintItem key={item.id} text={item.title} href={href} />
             })}
           </nav>

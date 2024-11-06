@@ -1,11 +1,7 @@
-import type { Lang } from '@/config'
+import type { PageProps } from '../types'
 import { dictionaries } from '@/dictionaries'
 
-export default async function Page({
-  params,
-}: Readonly<{
-  params: Promise<{ lang: Lang }>
-}>) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
   const dict = await dictionaries.home[lang]()
 

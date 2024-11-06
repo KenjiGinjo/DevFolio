@@ -1,22 +1,18 @@
-import type { Lang } from '@/config'
 import type { Metadata } from 'next'
+import type { LayoutProps } from '../types'
 import { Header } from '@/components/header'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
-import { LANGS } from '@/config'
-import localFont from 'next/font/local'
-import '../globals.css'
+import { type Language, languages } from '@/dictionaries/settings'
+import { EnumLanguage } from '@devfolio/enum'
+import { Lora, Noto_Sans_SC } from 'next/font/google'
+import './globals.css'
 
-const geistSans = localFont({
-  src: '../fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-})
-
-const geistMono = localFont({
-  src: '../fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-})
+const lora = Lora({ weight: '400', subsets: ['latin'], display: 'swap' })
+const notoSansSC = Noto_Sans_SC({ weight: '400', subsets: ['latin', 'vietnamese'], display: 'swap' })
+const fonts = {
+  [EnumLanguage.US]: lora,
+  [EnumLanguage.CN]: notoSansSC,
+}
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,21 +20,15 @@ export const metadata: Metadata = {
 }
 
 export async function generateStaticParams() {
-  return LANGS
+  return languages.map(lang => ({ lang }))
 }
 
-export default async function Root({
-  children,
-  params,
-}: Readonly<{
-  params: Promise<{ lang: Lang }>
-  children: React.ReactNode
-}>) {
+export default async function Root({ children, params }: LayoutProps) {
   const { lang } = await params
 
   return (
-    <html lang={lang}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang={lang} className={fonts[lang].className}>
+      <body className="antialiased">
         <Header lang={lang} />
         {children}
         <TailwindIndicator />

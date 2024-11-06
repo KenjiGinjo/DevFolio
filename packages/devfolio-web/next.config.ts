@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: '/zh-CN/:path*',
+        destination: '/zh-CN/:path*',
+      },
+      {
         source: '/:path*',
         destination: '/en-US/:path*',
       },
