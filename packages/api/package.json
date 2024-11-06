@@ -1,0 +1,14 @@
+{
+  "name": "@devfolio/api",
+  "scripts": {
+    "dev": "bun run --hot src/app.ts"
+  },
+  "dependencies": {
+    "@devfolio/db": "workspace:*",
+    "@devfolio/service": "workspace:*",
+    "@devfolio/tool": "workspace:*",
+    "@devfolio/validator": "workspace:*",
+    "@hono/zod-validator": "0.2.1",
+    "hono": "4.2.6"
+  }
+}

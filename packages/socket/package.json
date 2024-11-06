@@ -1,0 +1,11 @@
+{
+  "name": "@devfolio/socket",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --hot ./src/app.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "^1.1.0"
+  }
+}

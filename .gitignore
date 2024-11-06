@@ -1,38 +1,56 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# compiled output
+dist
+build
+out
+node_modules
+next-env.d.ts
+deploy_versions
+.temp
+.rn_temp
+.eslintcache
+*.tsbuildinfo
+.stylelintcache
+.next
+.nuxt
+.build
+.cache
+.vercel
+.malagu
+.swc
+.turbo
+.app.yaml
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
 
-# local env files
-.env*.local
+# OS
+.DS_Store
 
-# vercel
-.vercel
+# IDEs and editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Tests
+/coverage
+/.nyc_output
 
-TODO/
+# dotenv
+.env
+.env.local
+.env.*.local
