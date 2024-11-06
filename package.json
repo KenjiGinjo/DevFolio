@@ -1,0 +1,22 @@
+{
+  "name": "devfolio-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "bun@1.1.17",
+  "scripts": {
+    "test": "bun --filter '*' test",
+    "lint": "bun --filter '*' lint",
+    "lint:fix": "bun --filter '*' lint:fix",
+    "check-type": "bun --filter '*' check-type",
+    "clean": "rm -rf **/*/node_modules **/*/.eslintcache **/*/.next node_modules"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
+    "eslint": "^9.14.0",
+    "globals": "^15.9.0",
+    "typescript": "^5"
+  }
+}
