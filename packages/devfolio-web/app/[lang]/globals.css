@@ -70,7 +70,128 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+
+
+.intro {
+  position: relative;
+}
+
+.intro:before {
+  width: 0;
+  animation-name: intro_width;
+  animation-duration: 1.08s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+}
+.intro:after {
+  width: 0;
+  animation-name: intro_width;
+  animation-duration: 1.08s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+}
+
+.intro_line:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+      hsl(var(--border)),
+      hsl(var(--border)) 50%,
+      hsl(var(--background)) 0,
+      hsl(var(--background)));
+  background-size: 5px 1px;
+  -webkit-mask: linear-gradient(to left,
+  hsl(var(--background)) 93%, #0000),
+      linear-gradient(to right, hsl(var(--background)) 93%, #0000), 
+      linear-gradient(#000, #000);
+  -webkit-mask-composite: destination-in;
+  mask-composite: exclude;
+}
+.intro_line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+      hsl(var(--border)),
+      hsl(var(--border)) 50%,
+      hsl(var(--background)) 0,
+      hsl(var(--background)));
+  background-size: 5px 1px;
+  -webkit-mask: linear-gradient(to left,
+  hsl(var(--background)) 93%, #0000),
+      linear-gradient(to right, hsl(var(--background)) 93%, #0000), 
+      linear-gradient(#000, #000);
+  -webkit-mask-composite: destination-in;
+  mask-composite: exclude;
+}
+
+.intro_line_container_line {
+  width: 1px;
+  height: 0;
+  animation-name: intro_height;
+  animation-duration: 1.08s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+  background: linear-gradient(180deg,  hsl(var(--border)),  hsl(var(--border)) 50%, #0000 0, #0000);
+
+  background-size: 1px 5px;
+  -webkit-mask: linear-gradient(to top, hsl(var(--background)) 50%, #0000);
+}
+
+
+.intro_line_container_relate_line {
+  width: 1px;
+  height: 0;
+  animation-name: intro_height_extra;
+  animation-duration: 1.08s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+  background: linear-gradient(180deg,  hsl(var(--border)),  hsl(var(--border)) 50%, #0000 0, #0000);
+
+  background-size: 1px 5px;
+}
+
+
+.intro_line_relative_line {
+  width: 1px;
+  height: 0;
+  animation-name: intro_height;
+  animation-duration: 1.08s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+  background: linear-gradient(180deg,  hsl(var(--border)),  hsl(var(--border)) 50%, #0000 0, #0000);
+
+  background-size: 1px 5px;
+}
+
+@keyframes intro_width {
+  100% {
+    width: calc(100%);
+  }
+}
+
+@keyframes intro_height {
+  100% {
+    height: calc(100%);
+  }
+}
+@keyframes intro_height_extra {
+  100% {
+    height: calc(100% + 50px);
   }
 }
