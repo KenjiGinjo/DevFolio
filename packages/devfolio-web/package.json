@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "svg:generate": "bunx --bun @svgr/cli --typescript --out-dir icons --index-template assets/svg/index-template.js -- assets/svg",
+    "svg:lint": "eslint ./icons --fix",
+    "svg": "npm run svg:generate && npm run svg:lint",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,6 +27,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@svgr/cli": "^8.1.0",
     "@types/node": "^20.16.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
