@@ -1,0 +1,33 @@
+.intro-line {
+    position: relative;
+}
+
+.intro-line:before,
+.intro-line:after {
+    content: "";
+    width: 0;
+    animation-name: intro-line-width;
+    animation-duration: 1.08s;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation-fill-mode: forwards;
+    animation-delay: 0.15s;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+            hsl(var(--border)),
+            hsl(var(--border)) 50%,
+            hsl(var(--background)) 0,
+            hsl(var(--background)));
+    background-size: 5px 1px;
+    -webkit-mask-composite: destination-in;
+    mask-composite: exclude;
+}
+
+
+@keyframes intro-line-width {
+    100% {
+      width: 100%;
+    }
+  }
+  
