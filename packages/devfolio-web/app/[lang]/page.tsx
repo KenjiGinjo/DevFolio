@@ -15,16 +15,16 @@ export default async function Page({ params }: PageProps) {
       <main className="py-6 relative">
         <div className="h-full absolute left-4 md:left-20">
           <IconDottedCircle stroke={COLORS.border} className="absolute -left-10 top-6" />
-          <div className="intro_line_relative_line" />
+          <div className="intro-line-vertical  intro-line-animation" />
         </div>
         <div className="h-full absolute right-4 md:right-20">
-          <div className="intro_line_relative_line" />
+          <div className="intro-line-vertical  intro-line-animation" />
         </div>
         <div className="w-[55%] h-16 mx-auto flex justify-between md:w-[45%]">
-          <div className="intro_line_container_line" />
-          <div className="intro_line_container_line" />
+          <div className="intro-line-vertical intro-line-vertical-mask intro-line-animation" />
+          <div className="intro-line-vertical intro-line-vertical-mask intro-line-animation" />
         </div>
-        <div className="intro-line text-center">
+        <div className="intro-line intro-line-animation text-center">
           <h1 className="text-2xl font-bold md:text-4xl p-4 md:p-6">Driven to Be a World-class Web Developer.</h1>
         </div>
         <div className="p-6 text-center">
@@ -32,11 +32,11 @@ export default async function Page({ params }: PageProps) {
             Over 10 Years Designing and Developing, Clients Love.
           </p>
         </div>
-        <div className="intro-line">
+        <div className="intro-line intro-line-animation">
           <div className="w-[55%] h-24 mx-auto flex justify-between items-center md:w-[45%] relative">
-            <div className="intro_line_container_relate_line" />
+            <div className="intro-line-vertical intro-line-vertical-extra intro-line-animation" />
             <Button size="lg">Get in Touch</Button>
-            <div className="intro_line_container_relate_line" />
+            <div className="intro-line-vertical intro-line-vertical-extra intro-line-animation" />
             <IconDottedCircle stroke={COLORS.border} className="absolute -right-9 -bottom-9 rotate-180 animate-in" />
           </div>
         </div>
