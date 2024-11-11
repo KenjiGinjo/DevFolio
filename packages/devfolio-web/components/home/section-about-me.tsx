@@ -34,7 +34,7 @@ interface CardProps {
 
 function Card({ title, description, className }: CardProps) {
   return (
-    <div className={cn('absolute w-[290px] bg-background border border-border shadow-lg rounded-lg hover:z-10 hover:scale-110 hover:rotate-0 transition duration-300 ease-in-out cursor-pointer', className)}>
+    <div className={cn('absolute w-[290px] bg-background border border-border shadow-lg rounded-lg hover:z-10 hover:scale-125 hover:rotate-0 transition duration-300 ease-in-out cursor-pointer', className)}>
       <div className="w-full flex justify-center">
         <Image src="/Avatar_Pink.png" width={200} height={170} alt="Kenji Ginjo" />
       </div>
@@ -49,7 +49,7 @@ function Card({ title, description, className }: CardProps) {
 
 function Recommendations() {
   return (
-    <div className="absolute -top-10 right-24 flex flex-row items-center justify-center w-[453px]">
+    <div className="absolute -top-16 right-24 flex flex-row items-center justify-center w-[453px]">
       <Card title="VocalAce" description="This is only a heuristic since the TypeScript plugin doesn't actually know if it receives a Server Action or an ordinary function. Runtime type-checking will still ensure you don't accidentally pass a function to a Client Component." className="right-0 top-0 z-[2] -rotate-1" />
       <Card title="Dictogloss" description="This is only a heuristic since the TypeScript plugin doesn't actually know if it receives a Server Action or an ordinary function. Runtime type-checking will still ensure you don't accidentally pass a function to a Client Component." className="right-[100px] -top-[20px] z-[1] -rotate-2" />
       <Card title="Personal Website" description="This is only a heuristic since the TypeScript plugin doesn't actually know if it receives a Server Action or an ordinary function. Runtime type-checking will still ensure you don't accidentally pass a function to a Client Component." className="right-[200px] -top-[40px] -rotate-3" />
