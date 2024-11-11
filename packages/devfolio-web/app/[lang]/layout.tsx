@@ -6,9 +6,10 @@ import { type Language, languages } from '@/dictionaries/settings'
 import { EnumLanguage } from '@devfolio/enum'
 import { Lora, Noto_Sans_SC } from 'next/font/google'
 import './globals.css'
+import '@/assets/style/intro.css'
 
-const lora = Lora({ weight: '400', subsets: ['latin'], display: 'swap' })
-const notoSansSC = Noto_Sans_SC({ weight: '400', subsets: ['latin', 'vietnamese'], display: 'swap' })
+const lora = Lora({ subsets: ['latin'], display: 'swap' })
+const notoSansSC = Noto_Sans_SC({ subsets: ['latin', 'vietnamese'], display: 'swap' })
 const fonts = {
   [EnumLanguage.US]: lora,
   [EnumLanguage.CN]: notoSansSC,

@@ -11,6 +11,14 @@
   animation-delay: 0.15s;
 }
 
+.intro-mask-trim {
+  -webkit-mask: linear-gradient(to left, hsl(var(--background)) 93%, #0000),
+    linear-gradient(to right, hsl(var(--background)) 93%, #0000),
+    linear-gradient(#000, #000);
+  -webkit-mask-composite: destination-in;
+  mask-composite: exclude;
+}
+
 .intro-line:before,
 .intro-line:after {
   content: "";
@@ -18,14 +26,14 @@
   animation-name: kf-intro-line-width;
   position: absolute;
   left: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(to right,
-      hsl(var(--border)),
-      hsl(var(--border)) 50%,
+      hsl(var(--accent)),
+      hsl(var(--accent)) 50%,
       hsl(var(--background)) 0,
       hsl(var(--background)));
 
-  background-size: 5px 1px;
+  background-size: 10px 1px;
   -webkit-mask: linear-gradient(to left, hsl(var(--background)) 93%, #0000),
     linear-gradient(to right, hsl(var(--background)) 93%, #0000),
     linear-gradient(#000, #000);
@@ -40,15 +48,15 @@
 }
 
 .intro-line-vertical {
-  width: 1px;
+  width: 2px;
   height: 0;
   animation-name: kf-intro-line-height;
   background: linear-gradient(180deg,
-      hsl(var(--border)),
-      hsl(var(--border)) 50%,
+      hsl(var(--accent)),
+      hsl(var(--accent)) 50%,
       hsl(var(--background)) 0,
       hsl(var(--background)));
-  background-size: 1px 5px;
+  background-size: 1px 10px;
 }
 
 .intro-line-vertical-mask {
@@ -71,4 +79,10 @@
   100% {
     height: calc(100% + 50px);
   }
+}
+
+.intro-cubics {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black);
+  mask-image: linear-gradient(to bottom, transparent 0%, black);
+  background-image: url("/line-background.svg");
 }
