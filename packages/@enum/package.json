@@ -1,0 +1,13 @@
+{
+  "name": "@devfolio/enum",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check-type": "tsc --noEmit"
+  }
+}
