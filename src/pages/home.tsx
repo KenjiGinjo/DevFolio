@@ -3,6 +3,7 @@ import { SKILL_CATEGORIES } from '../constants/skills'
 import { backEnd, devOpsAndCloud, frontEnd, frontEndFrameworksAndLibraries, other } from '../data/skills'
 import { SkillCategory } from '@/components/skill-category'
 import { SkillDrawer } from '@/components/skill-drawer'
+import { calculateSkillLevel } from '@/utils/skillUtils'
 import type { Skill } from '@/interfaces'
 
 export function Home() {
@@ -27,10 +28,27 @@ export function Home() {
     other,
   }
 
-  const skillCategories = SKILL_CATEGORIES.map(category => ({
-    title: category.title,
-    skills: skillsData[category.key as keyof typeof skillsData],
-  }))
+  const skillCategories = SKILL_CATEGORIES.map(category => {
+    const skills = skillsData[category.key as keyof typeof skillsData]
+    
+    // 将技能对象转换为数组并按分数排序
+    const sortedSkills = Object.entries(skills)
+      .map(([key, skill]) => ({
+        key,
+        skill,
+        score: calculateSkillLevel(skill.baseLevel, skill.expierience.length)
+      }))
+      .sort((a, b) => b.score - a.score) // 按分数从高到低排序
+      .reduce((acc, { key, skill }) => {
+        acc[key] = skill
+        return acc
+      }, {} as Record<string, Skill>)
+    
+    return {
+      title: category.title,
+      skills: sortedSkills,
+    }
+  })
 
   return (
     <div>
