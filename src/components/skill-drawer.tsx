@@ -17,27 +17,17 @@ export function SkillDrawer({ skill, isOpen, onClose }: SkillDrawerProps) {
 
   const progress = calculateSkillLevel(skill.baseLevel, skill.expierience.length)
   const progressColor = getProgressColor(progress)
-  const proficiencyLevel = getProficiencyLevel(progress)
 
   return (
     <Drawer open={isOpen} onOpenChange={onClose}>
       <DrawerContent className="max-h-[90vh]">
         <DrawerHeader className="border-b border-gray-100 pb-4">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">
-                {skill.alias.charAt(0).toUpperCase()}
-              </span>
-            </div>
-            <div className="flex-1">
-              <DrawerTitle className="text-2xl font-bold text-gray-900">
+        <DrawerTitle className="text-2xl font-bold text-gray-900">
                 {skill.alias}
               </DrawerTitle>
               <DrawerDescription className="text-gray-600 mt-1">
-                {proficiencyLevel} • {skill.expierience.length} projects
+                skill description and experience list
               </DrawerDescription>
-            </div>
-          </div>
         </DrawerHeader>
         
         <div className="px-6 py-6 space-y-6 overflow-y-auto">
