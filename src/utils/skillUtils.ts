@@ -38,9 +38,9 @@ export const getProficiencyBadgeColor = (progress: number): string => {
         case 'Expert':
           return 'bg-green-100 text-green-700'; // 对应 #10b981
         case 'Advanced':
-          return 'bg-yellow-100 text-yellow-700'; // 对应 #eab308
+          return 'bg-gray-100 text-gray-700'; // 对应 #374151
         case 'Intermediate':
-          return 'bg-amber-100 text-amber-700'; // 对应 #f59e0b
+          return 'bg-gray-100 text-gray-700'; // 对应 #6b7280
         case 'Beginner':
           return 'bg-red-100 text-red-700'; // 对应 #ef4444
         case 'Novice':

@@ -11,7 +11,7 @@ export function SkillCategory({ title, skills, onSkillClick }: SkillCategoryProp
   return (
     <div className="mb-12">
       <div className="flex items-center mb-8">
-        <div className="w-1 h-8 bg-yellow-500 rounded-full mr-4"></div>
+        <div className="w-1 h-8 bg-primary rounded-full mr-4"></div>
         <h2 className="text-3xl font-bold text-gray-900">
           {title}
         </h2>

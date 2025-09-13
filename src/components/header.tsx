@@ -6,7 +6,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-gray-900">
-                Defolio
+                KenjiGinjo
               </h1>
 
           <div className="flex items-center space-x-3">
@@ -33,7 +33,7 @@ export function Header() {
               size="icon"
             >
               <a 
-                href="https://github.com" 
+                href="https://github.com/KenjiGinjo" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -50,7 +50,7 @@ export function Header() {
               size="icon"
             >
               <a 
-                href="https://weibo.com" 
+                href="https://weibo.com/u/7197769280" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

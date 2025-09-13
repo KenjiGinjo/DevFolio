@@ -6,7 +6,7 @@ export function Footer() {
           {/* About Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">K</span>
               </div>
               <h3 className="text-xl font-bold">Kenji Ginjo</h3>
@@ -20,7 +20,7 @@ export function Footer() {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-yellow-500 rounded-lg flex items-center justify-center transition-all duration-200 group"
+                className="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-200 group"
               >
                 <img 
                   src="/twitter-x.svg" 
@@ -60,22 +60,22 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
+                <a href="#about" className="text-gray-300 hover:text-primary-foreground transition-colors duration-200">
                   About Me
                 </a>
               </li>
               <li>
-                <a href="#skills" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
+                <a href="#skills" className="text-gray-300 hover:text-primary-foreground transition-colors duration-200">
                   My Skills
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
+                <a href="#projects" className="text-gray-300 hover:text-primary-foreground transition-colors duration-200">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200">
+                <a href="#contact" className="text-gray-300 hover:text-primary-foreground transition-colors duration-200">
                   Contact
                 </a>
               </li>
@@ -87,8 +87,8 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
-                  <svg className="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>

@@ -83,7 +83,7 @@ export function Home() {
               * Content as of 2023. For the latest updates, follow my GitHub code
             </span>
           </p>
-          <div className="mt-8 h-1 w-24 bg-yellow-500 rounded-full mx-auto"></div>
+          <div className="mt-8 h-1 w-24 bg-primary rounded-full mx-auto"></div>
         </div>
 
         {skillCategories.map((category, index) => (

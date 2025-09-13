@@ -24,7 +24,7 @@ export function SkillDrawer({ skill, isOpen, onClose }: SkillDrawerProps) {
       <DrawerContent className="max-h-[90vh]">
         <DrawerHeader className="border-b border-gray-100 pb-4">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">
                 {skill.alias.charAt(0).toUpperCase()}
               </span>
@@ -71,9 +71,9 @@ export function SkillDrawer({ skill, isOpen, onClose }: SkillDrawerProps) {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience</h3>
             <div className="space-y-3">
               {skill.expierience.map((exp: Experience, index: number) => (
-                <div key={index} className="p-4 bg-white border border-gray-200 rounded-lg hover:border-yellow-300 transition-colors">
+                <div key={index} className="p-4 bg-white border border-gray-200 rounded-lg transition-colors">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-amber-600">
+                    <span className="text-sm font-medium text-primary">
                       {formatDate(exp.date)}
                     </span>
                     <span className="text-xs text-gray-400">#{index + 1}</span>

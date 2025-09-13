@@ -22,7 +22,7 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-3">
      
-            <h3 className="text-xl font-bold text-gray-900 ">
+            <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
               {skill.alias}
             </h3>
           </div>
