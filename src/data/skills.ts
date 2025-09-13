@@ -14,7 +14,6 @@ export const frontEnd = {
       }]
   },
   Typescript: {
-      iconDimensions: [75, 75],
       baseLevel: 78,
       alias: "Typescript",
       expierience: [{
