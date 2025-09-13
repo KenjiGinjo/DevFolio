@@ -35,10 +35,10 @@ export function Home() {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 shadow-xl border border-white/20">
+        <div className="relative overflow-hidden bg-yellow-50 rounded-2xl p-8 shadow-sm border border-gray-200">
           {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-400/20 to-pink-400/20 rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-full -translate-y-16 translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-100 rounded-full translate-y-12 -translate-x-12"></div>
           
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -56,15 +56,15 @@ export function Home() {
               {/* Content */}
               <div className="flex-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
                     <span className="text-white text-lg font-bold">👋</span>
                   </div>
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold text-gray-900">
                     Hello, I'm Kenji
                   </h2>
                 </div>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I'm a <span className="font-semibold text-blue-600">full-stack engineer</span> who loves coding and hanging out with kind people. 
+                  I'm a <span className="font-semibold text-amber-600">full-stack engineer</span> who loves coding and hanging out with kind people. 
                   I think I'm pretty nice too! If you want to know more about me, check out my social media. 
                   <span className="block mt-3 text-gray-600">I'd love to hear from you! 💬</span>
                 </p>
@@ -76,10 +76,10 @@ export function Home() {
 
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-2xl mb-6 shadow-sm">
             <span className="text-2xl">⚡</span>
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
             My Skills
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -88,7 +88,7 @@ export function Home() {
               Click on any skill to learn more about my experience
             </span>
           </p>
-          <div className="mt-8 h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto"></div>
+          <div className="mt-8 h-1 w-24 bg-yellow-500 rounded-full mx-auto"></div>
         </div>
 
         {skillCategories.map((category, index) => (

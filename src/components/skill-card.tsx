@@ -1,4 +1,4 @@
-import { calculateSkillLevel, getProficiencyLevel, getProgressColor } from "@/utils/skillUtils"
+import { calculateSkillLevel, getProficiencyLevel, getProgressColor, getProficiencyBadgeColor } from "@/utils/skillUtils"
 import React from "react"
 import { Progress } from "./ui/progress"
 import type { Skill } from "@/interfaces"
@@ -13,10 +13,11 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
   const [isHovered, setIsHovered] = React.useState(false)
   const progress = calculateSkillLevel(skill.baseLevel, skill.expierience.length)
   const progressColor = getProgressColor(progress)
+  const badgeColor = getProficiencyBadgeColor(progress)
 
   return (
     <div
-      className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer relative overflow-hidden hover:-translate-y-1"
+      className="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-yellow-300 transition-all duration-300 cursor-pointer relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSkillClick(skill)}
@@ -24,16 +25,16 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">
                 {skill.alias.charAt(0).toUpperCase()}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors">
               {skill.alias}
             </h3>
           </div>
-          <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-sm font-semibold rounded-full">
+          <span className={`px-3 py-1 text-sm font-semibold rounded-full ${badgeColor}`}>
             {getProficiencyLevel(progress)}
           </span>
         </div>

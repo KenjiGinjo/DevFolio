@@ -32,7 +32,7 @@ export const SKILL_CONFIG = {
   },
   PROGRESS_COLORS: {
     EXPERT: '#10b981',
-    ADVANCED: '#3b82f6',
+    ADVANCED: '#eab308',
     INTERMEDIATE: '#f59e0b',
     BEGINNER: '#ef4444',
     NOVICE: '#6b7280'
