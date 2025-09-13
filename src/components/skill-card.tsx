@@ -1,4 +1,4 @@
-import { calculateSkillLevel, getProficiencyLevel } from "@/utils/skillUtils"
+import { calculateSkillLevel, getProficiencyLevel, getProgressColor } from "@/utils/skillUtils"
 import React from "react"
 import { Progress } from "./ui/progress"
 import type { Skill } from "@/interfaces"
@@ -12,6 +12,7 @@ interface SkillCardProps {
 export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
   const [isHovered, setIsHovered] = React.useState(false)
   const progress = calculateSkillLevel(skill.baseLevel, skill.expierience.length)
+  const progressColor = getProgressColor(progress)
 
   return (
     <div
@@ -32,7 +33,7 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
       </div>
 
       <div className="mb-2">
-        <Progress value={progress} />
+        <Progress value={progress} color={progressColor} />
       </div>
 
       <div className="flex justify-between items-center text-sm text-gray-600">
