@@ -1,6 +1,6 @@
 import { DrawerDescription } from "./ui/drawer"
 import type { Experience, Skill } from "@/interfaces"
-import { calculateSkillLevel, formatDate, getProgressColor, getProficiencyLevel } from "@/utils/skillUtils"
+import { calculateSkillLevel, formatDate, getProgressColor } from "@/utils/skillUtils"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from "./ui/drawer"
 import { Progress } from "./ui/progress"
   
