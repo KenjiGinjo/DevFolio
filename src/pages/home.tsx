@@ -55,14 +55,9 @@ export function Home() {
               
               {/* Content */}
               <div className="flex-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-lg font-bold">👋</span>
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">
-                    Hello, I'm Kenji
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  👋 Hello, I'm Kenji
                   </h2>
-                </div>
                 <p className="text-lg leading-relaxed text-gray-700">
                   I'm a <span className="font-semibold text-amber-600">full-stack engineer</span> who loves coding and hanging out with kind people. 
                   I think I'm pretty nice too! If you want to know more about me, check out my social media. 
@@ -76,9 +71,6 @@ export function Home() {
 
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-2xl mb-6 shadow-sm">
-            <span className="text-2xl">⚡</span>
-          </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             My Skills
           </h1>
@@ -86,6 +78,9 @@ export function Home() {
             Technologies and tools I work with
             <span className="block mt-2 text-sm text-gray-500">
               Click on any skill to learn more about my experience
+            </span>
+            <span className="block mt-3 text-sm text-amber-600 font-medium">
+              * Content as of 2023. For the latest updates, follow my GitHub code
             </span>
           </p>
           <div className="mt-8 h-1 w-24 bg-yellow-500 rounded-full mx-auto"></div>

@@ -1,3 +1,5 @@
+import { Button } from "./ui/button"
+
 export function Header() {
   return (
     <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
@@ -8,42 +10,57 @@ export function Header() {
               </h1>
 
           <div className="flex items-center space-x-3">
-            <a 
-              href="https://x.com/KenjiGinjo" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 bg-gray-100 hover:bg-yellow-500 rounded-lg flex items-center justify-center transition-all duration-200 group"
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
             >
-              <img 
-                src="/twitter-x.svg" 
-                alt="Twitter/X" 
-                className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors"
-              />
-            </a>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 bg-gray-100 hover:bg-gray-900 rounded-lg flex items-center justify-center transition-all duration-200 group"
+              <a 
+                href="https://x.com/KenjiGinjo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="/twitter-x.svg" 
+                  alt="Twitter/X" 
+                  className="w-5 h-5"
+                />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
             >
-              <img 
-                src="/github.svg" 
-                alt="GitHub" 
-                className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors"
-              />
-            </a>
-            <a 
-              href="https://weibo.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 bg-gray-100 hover:bg-red-500 rounded-lg flex items-center justify-center transition-all duration-200 group"
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="/github.svg" 
+                  alt="GitHub" 
+                  className="w-5 h-5"
+                />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
             >
-              <img 
-                src="/weibo.svg" 
-                alt="Weibo" 
-                className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors"
-              />
-            </a>
+              <a 
+                href="https://weibo.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="/weibo.svg" 
+                  alt="Weibo" 
+                  className="w-5 h-5"
+                />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
