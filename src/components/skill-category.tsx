@@ -9,15 +9,15 @@ interface SkillCategoryProps {
 
 export function SkillCategory({ title, skills, onSkillClick }: SkillCategoryProps) {
   return (
-    <div className="mb-12">
-      <div className="flex items-center mb-8">
-        <div className="w-1 h-8 bg-primary rounded-full mr-4"></div>
-        <h2 className="text-3xl font-bold text-gray-900">
+    <div className="mb-16 sm:mb-20 lg:mb-24">
+      <div className="flex items-center mb-8 sm:mb-10 lg:mb-12">
+        <div className="w-1 h-6 sm:h-8 lg:h-10 bg-primary rounded-full mr-3 sm:mr-4"></div>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
           {title}
         </h2>
-        <div className="flex-1 h-px bg-gray-200 ml-4"></div>
+        <div className="flex-1 h-px bg-gray-200 ml-3 sm:ml-4"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {Object.entries(skills).map(([key, skill]: [string, Skill]) => (
           <SkillCard
             key={key}
