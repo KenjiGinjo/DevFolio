@@ -1,270 +1,207 @@
-🎉 **恭喜！网站部署成功！** 现在让我为您提供维护建议和常用命令：
+# DevFolio 服务器说明（Nginx + Node 构建）
 
-## 🔧 日常维护命令
+生产环境：**系统自带的 Nginx** 提供静态文件；**Node（npm/pnpm）只在构建时使用**，把 `dist/` 同步到服务器即可。不再使用 Docker。
 
-### 容器管理
+---
+
+## 架构
+
+| 组件 | 作用 |
+|------|------|
+| Nginx（apt 安装） | 监听 80/443，托管 `/var/www/devfolio/dist` |
+| Node | 仅在构建机或服务器上的源码目录执行 `npm run build` / `pnpm build` |
+| Certbot | Let's Encrypt 证书（可与 `nginx` 插件或 `webroot` 配合） |
+
+---
+
+## 一次性：先卸 Docker，再装 Nginx（推荐顺序）
+
+在服务器上**整段按顺序执行**。会删除本机所有容器、镜像、卷（不可恢复），确认后再做。
+
+### A. 停容器并卸掉 Docker（官方 `docker-ce` 与 Ubuntu `docker.io` 一起尝试卸载）
+
 ```bash
-# 查看容器状态
-docker compose ps
+# 1) 能停则停（无 Docker 会报错，可忽略）
+cd /var/www/devfolio 2>/dev/null && docker compose down 2>/dev/null || true
+docker stop $(docker ps -q) 2>/dev/null || true
 
-# 查看容器日志
-docker compose logs devfolio
+# 2) 卸包（两条都执行，覆盖常见安装方式）
+sudo apt-get update
+sudo apt-get purge -y \
+  docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
+  docker-ce-rootless-extras docker-scan-plugin docker-model-plugin \
+  docker.io docker-doc docker-compose docker-compose-v2 podman-docker 2>/dev/null
+# 注意：autoremove 可能顺带卸掉「不再被依赖」的包（例如曾作为依赖装上的 git）。
+# 若还需要 git，卸完后执行：sudo apt-get install -y git
+sudo apt-get autoremove -y --purge
 
-# 重启服务
-docker compose restart devfolio
+# 3) 删数据目录（释放磁盘；会清空原镜像与卷）
+sudo rm -rf /var/lib/docker /var/lib/containerd
 
-# 停止服务
-docker compose down
+# 4) 删掉 Docker 的 apt 源（若存在，避免以后 apt update 还去连 Docker 仓库）
+sudo rm -f /etc/apt/sources.list.d/docker.list /etc/apt/sources.list.d/docker-ce.list
+sudo rm -f /etc/apt/keyrings/docker.gpg /usr/share/keyrings/docker-archive-keyring.gpg 2>/dev/null
 
-# 启动服务
-docker compose up -d
+# 5) 可选：旧的手动 docker-compose 二进制
+sudo rm -f /usr/local/bin/docker-compose /usr/local/bin/docker-compose-v1 2>/dev/null
 
-# 查看实时日志
-docker compose logs -f devfolio
+# 6) 若仍提示有 docker 命令（残留文件，apt 已卸包）
+sudo rm -f /usr/bin/docker /usr/local/bin/docker
+sudo groupdel docker 2>/dev/null || true
+
+# 7) 按教程装在用户目录下的 n8n（Docker + 中文包），整目录删掉即可（路径按实际用户改 root 或 ubuntu）
+sudo rm -rf /root/n8n
+# 若是普通用户装的： rm -rf ~/n8n
 ```
 
-### 网站文件更新
+### B. 验证 Docker 已不在
+
 ```bash
-# 进入项目目录
-cd /var/www/devfolio
-
-# 备份当前文件
-cp -r dist dist_backup_$(date +%Y%m%d)
-
-# 上传新文件到 dist 目录
-# 然后重启容器
-docker compose restart devfolio
+command -v docker && echo "仍有 docker，执行上一节第 6 步或查: dpkg -S /usr/bin/docker 2>/dev/null" || echo "docker 已移除"
+sudo ss -tlnp | grep -E ':80|:443' || echo "80/443 当前无监听（正常，接着装 Nginx）"
 ```
 
-### SSL 证书管理
+### B2. autoremove 把 git 卸掉了？装回来
+
 ```bash
-# 手动续期证书
-sudo certbot renew
-
-# 检查证书状态
-sudo certbot certificates
-
-# 测试续期（不实际续期）
-sudo certbot renew --dry-run
+sudo apt-get install -y git
 ```
 
-## �� 定期维护任务
+### C. 删除站点目录里仅用于 Docker 的文件（可选）
 
-### 每周检查
 ```bash
-# 1. 检查容器状态
-docker compose ps
+sudo rm -f /var/www/devfolio/docker-compose.yml
+sudo mv /var/www/devfolio/nginx.conf /var/www/devfolio/nginx.conf.docker-backup 2>/dev/null || true
+```
 
-# 2. 检查磁盘空间
-df -h
+### D. 安装并启用系统 Nginx
 
-# 3. 检查内存使用
-free -h
+```bash
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo systemctl status nginx --no-pager
+sudo nginx -t
+```
 
-# 4. 检查网站访问
+装好后按下文 **「站点配置要点」** 建 `/etc/nginx/sites-available/devfolio`，`root` 指向 `/var/www/devfolio/dist`。
+
+### E. 安装 Node（仅当要在服务器上执行构建时）
+
+推荐使用 [NodeSource](https://github.com/nodesource/distributions) 或 `nvm`；示例（LTS）：
+
+```bash
+# 示例：请按官方文档选择当前 LTS 版本号
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt-get install -y nodejs
+node -v && npm -v
+```
+
+构建也可用本机或 CI，只把 `dist/` 同步到服务器，则服务器可不装 Node。
+
+---
+
+## 站点配置要点
+
+- 在 **`/etc/nginx/sites-available/devfolio`**（名称自定）里配置 `root` 指向 **`/var/www/devfolio/dist`**。
+- 用 **`sites-enabled`** 启用：`sudo ln -sf /etc/nginx/sites-available/devfolio /etc/nginx/sites-enabled/`，删除或禁用默认站点 `default`（若冲突）。
+- 证书仍可用 **`/etc/letsencrypt/live/kenjiginjo.com/`**（若之前用 certbot 已签发），在 `server { listen 443 ssl; }` 中配置 `ssl_certificate` / `ssl_certificate_key`。
+- 修改后执行：
+
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+最小检查：
+
+```bash
+curl -I http://127.0.0.1
 curl -I https://kenjiginjo.com
 ```
 
-### 每月检查
+---
+
+## 日常维护命令
+
 ```bash
-# 1. 更新系统包
-sudo apt update && sudo apt upgrade -y
+# Nginx 状态与重载
+sudo systemctl status nginx
+sudo nginx -t && sudo systemctl reload nginx
+sudo journalctl -u nginx -n 50 --no-pager
 
-# 2. 清理 Docker 缓存
-docker system prune -f
+# 站点文件与备份
+sudo cp -a /var/www/devfolio/dist "/var/www/devfolio/dist_backup_$(date +%Y%m%d_%H%M%S)"
 
-# 3. 检查证书有效期
+# 证书
+sudo certbot renew
 sudo certbot certificates
-
-# 4. 备份重要文件
-sudo tar -czf /backup/devfolio_$(date +%Y%m%d).tar.gz /var/www/devfolio
+sudo certbot renew --dry-run
 ```
 
-## 🚨 故障排除
+---
 
-### 网站无法访问
+## 更新网站（构建 + 发布）
+
+在含源码的机器上：
+
 ```bash
-# 检查容器状态
-docker compose ps
-
-# 查看错误日志
-docker compose logs devfolio
-
-# 检查端口占用
-netstat -tlnp | grep :80
-netstat -tlnp | grep :443
-
-# 重启服务
-docker compose restart devfolio
+git pull
+pnpm install   # 或 npm install
+pnpm run build # 或 npm run build
 ```
 
-### SSL 证书问题
+将 **`dist/` 内全部文件** 同步到服务器 **`/var/www/devfolio/dist/`**（`rsync` / `scp` / CI 均可），然后：
+
 ```bash
-# 检查证书文件
-ls -la /etc/letsencrypt/live/kenjiginjo.com/
-
-# 重新获取证书
-sudo certbot certonly --webroot -w /var/www/certbot -d kenjiginjo.com -d www.kenjiginjo.com
-
-# 重启容器
-docker compose restart devfolio
+sudo nginx -t && sudo systemctl reload nginx
 ```
 
-### 磁盘空间不足
+---
+
+## 定期自检
+
 ```bash
-# 清理 Docker 缓存
-docker system prune -a -f
-
-# 清理日志文件
-sudo journalctl --vacuum-time=7d
-
-# 清理 apt 缓存
-sudo apt clean
-```
-
-## �� 监控脚本
-
-### 创建健康检查脚本
-```bash
-# 创建监控脚本
-sudo nano /usr/local/bin/health-check.sh
-```
-
-脚本内容：
-```bash
-#!/bin/bash
-# 健康检查脚本
-
-echo "=== DevFolio 健康检查 ==="
-echo "时间: $(date)"
-echo
-
-# 检查容器状态
-echo "1. 容器状态:"
-docker compose ps
-
-echo
-echo "2. 网站访问测试:"
-curl -I https://kenjiginjo.com 2>/dev/null | head -1
-
-echo
-echo "3. 磁盘使用:"
-df -h /var/www/devfolio
-
-echo
-echo "4. 内存使用:"
+sudo systemctl is-active nginx
+df -h
 free -h
-
-echo
-echo "5. SSL 证书状态:"
-sudo certbot certificates | grep -A 5 "kenjiginjo.com"
+curl -I https://kenjiginjo.com
+sudo certbot certificates | head -20
 ```
 
-### 设置定时监控
+每月可执行：`sudo apt update && sudo apt upgrade -y`
+
+---
+
+## 故障排除
+
 ```bash
-# 给脚本执行权限
-sudo chmod +x /usr/local/bin/health-check.sh
+# 端口
+sudo ss -tlnp | grep -E ':80|:443'
 
-# 添加到 crontab（每小时检查一次）
-echo "0 * * * * /usr/local/bin/health-check.sh >> /var/log/devfolio-health.log" | sudo crontab -
+# 配置语法
+sudo nginx -t
+
+# 日志
+sudo tail -100 /var/log/nginx/error.log
+sudo tail -100 /var/log/nginx/access.log
 ```
 
-## 🔄 更新网站内容
+---
 
-### 方法1：直接上传文件
-```bash
-# 1. 备份当前文件
-cd /var/www/devfolio
-cp -r dist dist_backup_$(date +%Y%m%d_%H%M%S)
-
-# 2. 上传新文件到 dist 目录
-# 3. 重启容器
-docker compose restart devfolio
-```
-
-### 方法2：使用 Git（推荐）
-```bash
-# 1. 克隆项目到服务器
-cd /var/www
-git clone https://github.com/yourusername/DevFolio.git devfolio-source
-
-# 2. 构建项目
-cd devfolio-source
-npm install
-npm run build
-
-# 3. 复制构建文件
-cp -r dist/* /var/www/devfolio/dist/
-
-# 4. 重启容器
-cd /var/www/devfolio
-docker compose restart devfolio
-```
-
-## 📝 重要文件位置
+## 重要路径
 
 ```
-/var/www/devfolio/           # 网站根目录
-├── dist/                    # 网站文件
-├── nginx.conf              # Nginx 配置
-├── docker-compose.yml      # Docker 配置
-└── nginx-http.conf         # HTTP 临时配置
-
-/etc/letsencrypt/           # SSL 证书目录
-├── live/kenjiginjo.com/    # 证书文件
-└── archive/kenjiginjo.com/ # 证书备份
-
-/var/log/                   # 日志目录
-├── nginx/                  # Nginx 日志
-└── letsencrypt/           # 证书日志
+/var/www/devfolio/dist/          # 网站静态根目录（Nginx root 指向这里）
+/etc/nginx/sites-available/      # 站点配置
+/etc/nginx/sites-enabled/        # 已启用站点
+/etc/letsencrypt/live/kenjiginjo.com/   # 证书（若使用）
 ```
 
-## 🆘 紧急恢复
+---
 
-### 如果网站完全无法访问
-```bash
-# 1. 检查服务器状态
-systemctl status docker
+## 服务器信息（请自行更新）
 
-# 2. 重启 Docker 服务
-sudo systemctl restart docker
-
-# 3. 重新启动容器
-cd /var/www/devfolio
-docker compose up -d
-
-# 4. 检查防火墙
-sudo iptables -L
-```
-
-### 如果 SSL 证书过期
-```bash
-# 1. 停止 HTTPS 服务
-docker compose down
-
-# 2. 使用 HTTP 配置启动
-cp nginx-http.conf nginx.conf
-docker compose up -d
-
-# 3. 重新获取证书
-sudo certbot certonly --webroot -w /var/www/certbot -d kenjiginjo.com -d www.kenjiginjo.com
-
-# 4. 恢复 HTTPS 配置
-# 编辑 nginx.conf 恢复 HTTPS 配置
-docker compose restart devfolio
-```
-
-## �� 联系信息
-
-**服务器信息：**
-- 服务器：Ubuntu 22.04 LTS
+- 系统：Ubuntu 22.04 LTS（或当前实际版本）
 - 域名：kenjiginjo.com
-- 部署时间：2025年9月13日
-
-**维护建议：**
-- 每周检查一次网站状态
-- 每月更新系统包
-- 定期备份重要文件
-- 监控磁盘空间使用
-
-您的网站现在已经完全部署成功，可以正常访问了！🎊
+- 部署方式：系统 Nginx + 静态 `dist/`，无 Docker
