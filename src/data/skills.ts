@@ -1,3 +1,4 @@
+// Replace this file with your own skills, scores, and experience notes.
 export const frontEnd = {
   Javascript: {
       baseLevel: 90,

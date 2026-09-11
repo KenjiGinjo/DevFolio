@@ -1,6 +1,6 @@
 import { $ } from 'bun'
 
-// 服务器配置
+// Personal Nginx upload. Forkers: skip this and deploy `dist/` with Vercel or any static host.
 const SERVER_CONFIG = {
   host: process.env.SERVER_IP,
   username: process.env.SERVER_USERNAME,

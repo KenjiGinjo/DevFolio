@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SKILL_CATEGORIES } from '../constants/skills'
 import { backEnd, devOpsAndCloud, frontEnd, frontEndFrameworksAndLibraries, other } from '../data/skills'
+import { profile } from '@/data/profile'
 import { SkillCategory } from '@/components/skill-category'
 import { SkillDrawer } from '@/components/skill-drawer'
 import { calculateSkillLevel } from '@/utils/skillUtils'
@@ -65,8 +66,8 @@ export function Home() {
               <div className="flex-shrink-0 mx-auto lg:mx-0">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white/60">
                   <img 
-                    src="/profile-photo.jpeg" 
-                    alt="Kenji Ginjo" 
+                    src={profile.photo} 
+                    alt={profile.name} 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -75,12 +76,11 @@ export function Home() {
               {/* Content */}
               <div className="flex-1 text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-                  👋 Hello, I'm Kenji
+                  {profile.greeting}
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto lg:mx-0">
-                  I'm a <span className="font-semibold text-amber-600">full-stack engineer</span> who loves coding and hanging out with kind people. 
-                  I think I'm pretty nice too! If you want to know more about me, check out my social media. 
-                  <span className="block mt-3 sm:mt-4 text-gray-600">I'd love to hear from you! 💬</span>
+                  {profile.bio.before}<span className="font-semibold text-amber-600">{profile.bio.highlight}</span>{profile.bio.after}
+                  <span className="block mt-3 sm:mt-4 text-gray-600">{profile.bio.closing}</span>
                 </p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export function Home() {
               Click on any skill to learn more about my experience
             </span>
             <span className="block mt-3 sm:mt-4 text-sm sm:text-base text-amber-600 font-medium">
-              * Content as of 2023. For the latest updates, follow my GitHub code
+              {profile.skillsDisclaimer}
             </span>
           </p>
           <div className="mt-6 sm:mt-8 h-1 w-16 sm:w-20 lg:w-24 bg-primary rounded-full mx-auto"></div>
