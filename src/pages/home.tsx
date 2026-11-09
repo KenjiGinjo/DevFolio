@@ -7,6 +7,16 @@ import { SkillDrawer } from '@/components/skill-drawer'
 import { calculateSkillLevel } from '@/utils/skillUtils'
 import type { Skill } from '@/interfaces'
 
+const formatActivityDate = (dateString: string): string => {
+  const [year, month, day] = dateString.split('-').map(Number)
+  if (!year || !month || !day) return dateString
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}
+
 export function Home() {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -79,13 +89,51 @@ export function Home() {
                   {profile.greeting}
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto lg:mx-0">
-                  {profile.bio.before}<span className="font-semibold text-amber-600">{profile.bio.highlight}</span>{profile.bio.after}
+                  {profile.bio.before}<a
+                    href={profile.bio.highlightHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-amber-600 hover:underline"
+                  >{profile.bio.highlight}</a>{profile.bio.after}
                   <span className="block mt-3 sm:mt-4 text-gray-600">{profile.bio.closing}</span>
                 </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">GitHub</h2>
+        <p className="mt-2 text-base sm:text-lg text-gray-700 max-w-3xl">
+          <a
+            href={profile.githubActivity.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-amber-600 hover:underline"
+          >
+            {profile.githubActivity.contributions.toLocaleString('en-US')} contributions
+          </a>
+          {' '}in the last year, on {profile.githubActivity.activeDays} days.
+          <span className="block mt-1 text-sm sm:text-base text-gray-500">
+            GitHub&apos;s count on {formatActivityDate(profile.githubActivity.countedOn)}.
+          </span>
+        </p>
+        <ul className="mt-4 space-y-2 text-sm sm:text-base text-gray-700 max-w-3xl">
+          {profile.githubActivity.repos.map((repo) => (
+            <li key={repo.name} className="flex flex-wrap gap-x-3 gap-y-1">
+              <a
+                href={repo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gray-900 hover:underline"
+              >
+                {repo.name}
+              </a>
+              <span className="text-gray-500">Last push {formatActivityDate(repo.pushedAt)}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Skills Section */}
@@ -97,7 +145,7 @@ export function Home() {
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Technologies and tools I work with
             <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-gray-500">
-              Select a skill to read the experience. Scores on the cards are self-rated.
+              Select a skill to read the experience.
             </span>
           </p>
           <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-800 max-w-3xl mx-auto leading-relaxed border border-amber-200 bg-amber-50 rounded-xl px-4 py-3">

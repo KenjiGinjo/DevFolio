@@ -4,13 +4,13 @@ export const frontEnd = {
       baseLevel: 70,
       alias: "JavaScript",
       experience: [{
-          tip: "Started using JavaScript on web pages. The later notes are when the language details started to click.",
+          tip: "Started using JavaScript on web pages.",
           date: "2015-01-01"
       }, {
-          tip: "Self-study on Bilibili, not a certificate. Closures and async started to make sense here.",
+          tip: "Bilibili lessons on closures and async.",
           date: "2019-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered the call stack and execution context.",
+          tip: "Codecademy lesson on the call stack and execution context.",
           date: "2021-01-01"
       }]
   },
@@ -18,16 +18,16 @@ export const frontEnd = {
       baseLevel: 78,
       alias: "Typescript",
       experience: [{
-          tip: "Got curious about TypeScript but didn't really dive in at first - just poked around a bit.",
+          tip: "Looked through TypeScript.",
           date: "2018-01-01"
       }, {
-          tip: "Self-study on Bilibili, not a certificate. Watched TypeScript tutorials and learned the basic syntax.",
+          tip: "Bilibili lessons on TypeScript syntax.",
           date: "2019-02-01"
       }, {
-          tip: "Started using TypeScript on some projects.",
+          tip: "Started using TypeScript on projects.",
           date: "2020-03-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Worked through the TypeScript fundamentals.",
+          tip: "Codecademy lesson on TypeScript.",
           date: "2021-01-01"
       }, {
           tip: "Used TypeScript on a live course project. The types made the codebase easier to change.",
@@ -53,7 +53,7 @@ export const frontEnd = {
           tip: "Used HTML on the web projects I worked on.",
           date: "2017-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered semantic HTML.",
+          tip: "Codecademy lesson on semantic HTML.",
           date: "2021-01-01"
       }]
   },
@@ -64,7 +64,7 @@ export const frontEnd = {
           tip: "Styled web pages with CSS.",
           date: "2017-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Picked up CSS techniques I had not used before.",
+          tip: "Codecademy lesson on CSS.",
           date: "2021-01-01"
       }]
   },
@@ -114,7 +114,7 @@ export const frontEnd = {
           tip: "Read the Webpack docs.",
           date: "2019-01-01"
       }, {
-          tip: "Edited Webpack config on a couple of projects and saw how the build was wired.",
+          tip: "Edited the Webpack config on projects.",
           date: "2019-03-01"
       }]
   }
@@ -124,16 +124,16 @@ export const frontEndFrameworksAndLibraries = {
       baseLevel: 50,
       alias: "React",
       experience: [{
-          tip: "Started learning React from their docs, but didn't dive too deep at first - just getting familiar.",
+          tip: "Read the React docs.",
           date: "2021-01-01"
       }, {
-          tip: "Built my first React project using class components - felt a bit clunky but got the basics down.",
+          tip: "Built a React project with class components.",
           date: "2021-02-01"
       }, {
-          tip: "Switched to learning function components from the official docs - much cleaner approach.",
+          tip: "Studied function components in the React docs.",
           date: "2022-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered hooks and the component lifecycle.",
+          tip: "Codecademy lesson on hooks and the component lifecycle.",
           date: "2022-01-01"
       }, {
           tip: "Used React on a translation-app admin panel.",
@@ -158,7 +158,7 @@ export const frontEndFrameworksAndLibraries = {
           tip: "Read the Redux docs.",
           date: "2021-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Practiced actions and reducers, and did not use Redux on a shipped app.",
+          tip: "Codecademy lesson on actions and reducers.",
           date: "2021-01-01"
       }]
   },
@@ -166,13 +166,13 @@ export const frontEndFrameworksAndLibraries = {
       baseLevel: 65,
       alias: "Vue",
       experience: [{
-          tip: "Started learning Vue 2.0 from their docs - the template syntax felt intuitive.",
+          tip: "Started with Vue 2 from the docs.",
           date: "2018-01-01"
       }, {
-          tip: "Self-study on Bilibili, not a certificate. Watched Vue 2 tutorials.",
+          tip: "Bilibili lessons on Vue 2.",
           date: "2019-01-01"
       }, {
-          tip: "Built my first blog with Vue 2.0 - hands-on practice really helped me understand the framework better.",
+          tip: "Built a blog with Vue 2.",
           date: "2019-03-01"
       }, {
           tip: "Created a client website and admin panel with Vue 2.0.",
@@ -181,10 +181,10 @@ export const frontEndFrameworksAndLibraries = {
           tip: "Built a client content app with Vue 2.0.",
           date: "2019-05-01"
       }, {
-          tip: "Checked out Vue 3.0 from their docs - the Composition API looked interesting.",
+          tip: "Read the Vue 3 docs on the Composition API.",
           date: "2021-01-01"
       }, {
-          tip: "Built an e-commerce app with Vue 3 - the Composition API is really nice once you get used to it.",
+          tip: "Built an e-commerce app with Vue 3 and the Composition API.",
           date: "2021-06-01"
       }]
   },
@@ -209,7 +209,7 @@ export const frontEndFrameworksAndLibraries = {
           tip: "Read the Pinia docs.",
           date: "2021-06-01"
       }, {
-          tip: "Used Pinia on an e-commerce app. It was simpler for me than Vuex with the Composition API.",
+          tip: "Used Pinia on an e-commerce app with the Composition API.",
           date: "2021-06-01"
       }]
   },
@@ -228,10 +228,10 @@ export const frontEndFrameworksAndLibraries = {
       baseLevel: 50,
       alias: "Next.js",
       experience: [{
-          tip: "Started learning Next.js from their docs - the page routing system looked interesting.",
+          tip: "Read the Next.js docs on page routing.",
           date: "2021-04-01"
       }, {
-          tip: "Built a demo project with Next.js to get familiar with the framework.",
+          tip: "Built a Next.js project.",
           date: "2021-05-01"
       }, {
           tip: "Read the Next.js app-router docs.",
@@ -261,25 +261,25 @@ export const backEnd = {
       baseLevel: 60,
       alias: "Node.js",
       experience: [{
-          tip: "Knew Node.js existed, and had not studied it yet.",
+          tip: "Looked at Node.js as a backend option.",
           date: "2019-01-01"
       }, {
           tip: "Built APIs for a blog, a client site, and an e-commerce site with Egg.js. This was my switch from PHP to Node.js.",
           date: "2019-03-01"
       }, {
-          tip: "Working with build tools and package managers in frontend projects helped me understand Node.js better.",
+          tip: "Used Node.js through frontend build tools and package managers.",
           date: "2019-05-01"
       }, {
-          tip: "Read the Node.js docs for the basics, after I had already shipped a few APIs.",
+          tip: "Read the Node.js docs.",
           date: "2021-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered modules, events, and async programming.",
+          tip: "Codecademy lesson on modules, events, and async programming.",
           date: "2022-02-01"
       }, {
           tip: "Read the Node.js docs on streams, processes, debugging, and deployment.",
           date: "2022-08-01"
       }, {
-          tip: "By January 2023, I was using Node.js for most of my backend work. These notes stop in November 2023.",
+          tip: "Used Node.js for most backend work as of January 2023.",
           date: "2023-01-01"
       }]
   },
@@ -287,13 +287,13 @@ export const backEnd = {
       baseLevel: 30,
       alias: "Express",
       experience: [{
-          tip: "Started learning Express from their docs - the minimal web framework approach looked interesting.",
+          tip: "Read the Express docs.",
           date: "2019-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered Express middleware and routing.",
+          tip: "Codecademy lesson on Express middleware and routing.",
           date: "2022-01-01"
       }, {
-          tip: "Finished a Codecademy Express exercise. It was coursework, not a shipped product.",
+          tip: "Completed a Codecademy Express exercise.",
           date: "2022-01-01"
       }, {
           tip: "Used Express for a translation app API.",
@@ -335,7 +335,7 @@ export const backEnd = {
           tip: "Also used MongoDB for a live-streaming mini program, matching the course website.",
           date: "2020-01-01"
       }, {
-          tip: "Signed up for MongoDB Atlas and looked through the hosted database options.",
+          tip: "Signed up for MongoDB Atlas and reviewed the hosted database options.",
           date: "2021-01-01"
       }]
   },
@@ -343,13 +343,13 @@ export const backEnd = {
       baseLevel: 25,
       alias: "MySQL",
       experience: [{
-          tip: "First encountered MySQL with .ASP Dreamweaver - learned the basics of CRUD operations.",
+          tip: "Used MySQL with ASP and Dreamweaver for CRUD.",
           date: "2015-01-01"
       }, {
-          tip: "Used MySQL with ThinkPHP projects and got better at creating tables and writing SQL queries.",
+          tip: "Used MySQL with ThinkPHP for tables and SQL queries.",
           date: "2018-01-01"
       }, {
-          tip: "Did a lot of MySQL installation and deployment work in operations - learned the practical side of database management.",
+          tip: "Installed and deployed MySQL in operations work.",
           date: "2018-02-01"
       }]
   },
@@ -360,13 +360,13 @@ export const backEnd = {
           tip: "Read the PostgreSQL docs.",
           date: "2022-02-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Worked through a PostgreSQL lesson.",
+          tip: "Codecademy lesson on PostgreSQL.",
           date: "2022-02-01"
       }, {
           tip: "Used PostgreSQL for a translation app, including its JSON fields.",
           date: "2023-07-01"
       }, {
-          tip: "Used Prisma with PostgreSQL - the type-safe database client made working with the database much easier.",
+          tip: "Used Prisma with PostgreSQL.",
           date: "2023-07-01"
       }, {
           tip: "Deployed PostgreSQL for a translation app.",
@@ -377,10 +377,10 @@ export const backEnd = {
       baseLevel: 10,
       alias: "Python",
       experience: [{
-          tip: "Self-study on Bilibili, not a certificate. Watched a Python lesson.",
+          tip: "Bilibili lesson on Python.",
           date: "2019-01-01"
       }, {
-          tip: "Wrote a small Python script to automate a repetitive task.",
+          tip: "Wrote a Python script to automate a repetitive task.",
           date: "2019-04-01"
       }]
   },
@@ -388,13 +388,13 @@ export const backEnd = {
       baseLevel: 20,
       alias: "Java",
       experience: [{
-          tip: "Self-study on Codecademy, not a certificate. Covered basic object-oriented Java.",
+          tip: "Codecademy lesson on object-oriented Java.",
           date: "2023-02-01"
       }, {
           tip: "Learned Java from Android docs - needed it for mobile development.",
           date: "2023-03-01"
       }, {
-          tip: "Built an Android project with Java - hands-on experience really helped me understand the language.",
+          tip: "Built an Android project with Java.",
           date: "2023-03-01"
       }, {
           tip: "Used Java for React Native modules on a translation app: splash screen, bilingual copy, and theme handling.",
@@ -405,13 +405,13 @@ export const backEnd = {
       baseLevel: 12,
       alias: "Kotlin",
       experience: [{
-          tip: "Self-study on Codecademy, not a certificate. Worked through a Kotlin lesson.",
+          tip: "Codecademy lesson on Kotlin.",
           date: "2023-02-01"
       }, {
           tip: "Read the Android docs for Kotlin.",
           date: "2023-03-01"
       }, {
-          tip: "Built an Android project with Kotlin - the concise syntax is really nice compared to Java.",
+          tip: "Built an Android project with Kotlin.",
           date: "2023-03-01"
       }]
   },
@@ -419,16 +419,16 @@ export const backEnd = {
       baseLevel: 35,
       alias: "PHP",
       experience: [{
-          tip: "Took over a PHP project for an outsourcing client - my first real experience with the language.",
+          tip: "Took over a PHP project for an outsourcing client.",
           date: "2017-01-01"
       }, {
-          tip: "Discovered ThinkPHP framework - made PHP development much more structured and organized.",
+          tip: "Started using ThinkPHP.",
           date: "2017-08-01"
       }, {
           tip: "Built a blog, an e-commerce site, and a client commerce site with ThinkPHP.",
           date: "2018-01-01"
       }, {
-          tip: "Maintained a PHP e-commerce website - learned a lot about legacy code and debugging.",
+          tip: "Maintained a PHP e-commerce website.",
           date: "2022-05-01"
       }]
   }
@@ -438,13 +438,13 @@ export const devOpsAndCloud = {
       baseLevel: 5,
       alias: "Docker",
       experience: [{
-          tip: "Self-study on Bilibili, not a certificate. Practiced Docker images and containers.",
+          tip: "Bilibili lessons on Docker images and containers.",
           date: "2019-01-01"
       }, {
-          tip: "Read the Docker docs on images and containers. I did not run an orchestrator.",
+          tip: "Read the Docker docs on images and containers.",
           date: "2019-02-01"
       }, {
-          tip: "Built a Docker demo for myself. It was not a production deploy.",
+          tip: "Built a Docker demo.",
           date: "2019-03-01"
       }]
   },
@@ -455,7 +455,7 @@ export const devOpsAndCloud = {
           tip: "Signed up for Google Cloud and started a virtual machine.",
           date: "2022-01-01"
       }, {
-          tip: "Bought a domain through Google Cloud and set up DNS - learned about domain management.",
+          tip: "Bought a domain through Google Cloud and set up DNS.",
           date: "2022-02-01"
       }, {
           tip: "Read the Google Cloud docs on compute, storage, and networking.",
@@ -469,7 +469,7 @@ export const devOpsAndCloud = {
       baseLevel: 40,
       alias: "Alibaba Cloud",
       experience: [{
-          tip: "Got started with Alibaba Cloud - bought VPS, domain, and filing services for my first website.",
+          tip: "Bought an Alibaba Cloud VPS, a domain, and filing services for a website.",
           date: "2015-01-01"
       }, {
           tip: "Used Alibaba Cloud OSS, databases, monitoring, and storage on my own sites.",
@@ -483,7 +483,7 @@ export const devOpsAndCloud = {
       baseLevel: 30,
       alias: "DevOps",
       experience: [{
-          tip: "Used Coding for task tracking and repositories. That was project hosting, not a full deployment pipeline.",
+          tip: "Used Coding for task tracking and repositories.",
           date: "2019-01-01"
       }, {
           tip: "Started using GitHub for public repositories.",
@@ -499,10 +499,10 @@ export const other = {
       baseLevel: 45,
       alias: "Git",
       experience: [{
-          tip: "Learned the basics of Git.",
+          tip: "Learned Git.",
           date: "2019-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Practiced branching, merging, and conflicts.",
+          tip: "Codecademy lesson on branching, merging, and conflicts.",
           date: "2022-01-01"
       }]
   },
@@ -524,10 +524,10 @@ export const other = {
       baseLevel: 25,
       alias: "Figma",
       experience: [{
-          tip: "Signed up for Figma and moved earlier translation-app wireframes into it. Those sketches were not made in Figma.",
+          tip: "Signed up for Figma and moved translation-app wireframes into it.",
           date: "2022-09-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Worked through a lesson on components and prototyping.",
+          tip: "Codecademy lesson on components and prototyping.",
           date: "2022-11-01"
       }]
   },
@@ -535,7 +535,7 @@ export const other = {
       baseLevel: 35,
       alias: "Chrome DevTools",
       experience: [{
-          tip: "Self-study on Codecademy, not a certificate. Covered the performance and network panels. I was already using the basics to debug pages before this.",
+          tip: "Codecademy lesson on the performance and network panels.",
           date: "2022-12-01"
       }]
   },
@@ -565,10 +565,10 @@ export const other = {
       baseLevel: 2,
       alias: "TensorFlowJs",
       experience: [{
-          tip: "Read the TensorFlow.js docs. I did not ship a model.",
+          tip: "Read the TensorFlow.js docs.",
           date: "2023-04-01"
       }, {
-          tip: "Watched TensorFlow.js tutorials on YouTube. I did not ship a model.",
+          tip: "Watched TensorFlow.js tutorials on YouTube.",
           date: "2023-04-01"
       }]
   },
@@ -576,10 +576,10 @@ export const other = {
       baseLevel: 10,
       alias: "Redis",
       experience: [{
-          tip: "First encountered Redis in a project - in-memory database for caching seemed really fast.",
+          tip: "Used Redis for caching.",
           date: "2016-01-01"
       }, {
-          tip: "Set up Redis for a project and integrated it with PHP - learned about installation and configuration.",
+          tip: "Installed Redis and connected it to PHP.",
           date: "2018-01-01"
       }]
   },
@@ -587,7 +587,7 @@ export const other = {
       baseLevel: 20,
       alias: "SocketIO",
       experience: [{
-          tip: "Learned Socket.IO basics from their docs - real-time communication looked useful for interactive features.",
+          tip: "Read the Socket.IO docs on real-time messaging.",
           date: "2019-01-01"
       }, {
           tip: "Used Socket.IO for a live-streaming mini program's chat room.",
@@ -601,13 +601,13 @@ export const other = {
       baseLevel: 60,
       alias: "REST API",
       experience: [{
-          tip: "First encountered REST APIs in some projects - the standard way to communicate between frontend and backend.",
+          tip: "Worked with REST APIs between frontend and backend.",
           date: "2018-01-01"
       }, {
-          tip: "Took a REST API course on Codecademy - learned about HTTP methods, status codes, and API design principles.",
+          tip: "Codecademy course on HTTP methods, status codes, and API design.",
           date: "2022-01-01"
       }, {
-          tip: "By 2022, REST was the API style I used most. These notes stop in November 2023.",
+          tip: "REST was the API style I used most as of 2022.",
           date: "2022-01-01"
       }]
   },
@@ -615,7 +615,7 @@ export const other = {
       baseLevel: 5,
       alias: "Bash & Shell",
       experience: [{
-          tip: "Read a deployment script and learned a few Bash commands from it.",
+          tip: "Read a deployment script and used its Bash commands.",
           date: "2021-01-01"
       }]
   },
@@ -623,7 +623,7 @@ export const other = {
       baseLevel: 30,
       alias: "npm",
       experience: [{
-          tip: "Got comfortable with npm - finding and installing packages is essential for JavaScript development.",
+          tip: "Used npm to find and install packages.",
           date: "2019-01-01"
       }]
   },
@@ -631,7 +631,7 @@ export const other = {
       baseLevel: 8,
       alias: "Rust",
       experience: [{
-          tip: "Checked out Rust from their docs - memory safety and performance looked promising for systems programming.",
+          tip: "Read the Rust docs on memory safety and performance.",
           date: "2019-01-01"
       }]
   },
@@ -647,7 +647,7 @@ export const other = {
       baseLevel: 30,
       alias: "Universal Access",
       experience: [{
-          tip: "Self-study on Codecademy, not a certificate, and not an audit of this site.",
+          tip: "Codecademy lesson on universal access.",
           date: "2022-09-01"
       }]
   },
@@ -655,7 +655,7 @@ export const other = {
       baseLevel: 35,
       alias: "Web Front Basics",
       experience: [{
-          tip: "Took a Web Front Basics course on Codecademy - reinforced my understanding of core web technologies.",
+          tip: "Took the Web Front Basics course on Codecademy.",
           date: "2023-01-01"
       }]
   },
@@ -671,7 +671,7 @@ export const other = {
       baseLevel: 35,
       alias: "Regex",
       experience: [{
-          tip: "Practiced regular expressions. I still look up patterns I do not use often.",
+          tip: "Practiced regular expressions.",
           date: "2023-03-01"
       }]
   },
@@ -682,7 +682,7 @@ export const other = {
           tip: "As of 2020, I was using Linux to deploy projects.",
           date: "2020-01-01"
       }, {
-          tip: "Self-study on Codecademy, not a certificate. Covered file permissions, processes, and shell scripting.",
+          tip: "Codecademy lesson on file permissions, processes, and shell scripting.",
           date: "2022-08-01"
       }]
   }

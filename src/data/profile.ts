@@ -8,13 +8,37 @@ export const profile = {
   photo: '/profile-photo.jpeg',
   greeting: "Hello, I'm Kenji",
   bio: {
-    before: "I'm a ",
-    highlight: 'full-stack engineer',
-    after: ' working on web applications. The links above go to my profiles.',
-    closing: 'The scores on this page are self-rated. They are not certifications.',
+    before: 'I run ',
+    highlight: 'Neziva',
+    highlightHref: 'https://www.neziva.com',
+    after: '. I take remote contract work: ship the UI, API, data, and the deploy.',
+    closing: 'TypeScript, React / Next.js, Node / Bun, Hono, PostgreSQL.',
   },
   skillsDisclaimer:
-    'Notes run through November 2023.',
+    'Skill notes cover work through November 2023.',
+  githubActivity: {
+    href: 'https://github.com/KenjiGinjo',
+    contributions: 3199,
+    activeDays: 293,
+    countedOn: '2026-11-09',
+    repos: [
+      {
+        name: 'neziva',
+        href: 'https://github.com/KenjiGinjo/neziva',
+        pushedAt: '2026-11-09',
+      },
+      {
+        name: 'vocalace-course',
+        href: 'https://github.com/KenjiGinjo/vocalace-course',
+        pushedAt: '2026-11-08',
+      },
+      {
+        name: 'bun-ffmpeg',
+        href: 'https://github.com/KenjiGinjo/bun-ffmpeg',
+        pushedAt: '2026-09-09',
+      },
+    ],
+  },
   copyrightYear: 2026,
   socials: [
     {

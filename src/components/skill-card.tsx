@@ -23,9 +23,6 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
           <h3 className="min-w-0 text-lg sm:text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
             {skill.alias}
           </h3>
-          <span className="shrink-0 px-3 py-1 text-xs sm:text-sm font-semibold rounded-full bg-gray-100 text-gray-600">
-            Self-rated
-          </span>
         </div>
 
         <div className="mb-4 sm:mb-5">
@@ -38,7 +35,7 @@ export function SkillCard({ skill, onSkillClick }: SkillCardProps) {
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
           <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-            <div className="text-gray-500 text-xs font-medium mb-1">Self-rated</div>
+            <div className="text-gray-500 text-xs font-medium mb-1">Score</div>
             <div className="font-semibold text-gray-900">{skill.baseLevel}</div>
           </div>
           <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
