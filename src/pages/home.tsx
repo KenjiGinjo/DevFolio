@@ -37,7 +37,7 @@ export function Home() {
       .map(([key, skill]) => ({
         key,
         skill,
-        score: calculateSkillLevel(skill.baseLevel, skill.expierience.length)
+        score: calculateSkillLevel(skill.baseLevel)
       }))
       .sort((a, b) => b.score - a.score) // 按分数从高到低排序
       .reduce((acc, { key, skill }) => {
@@ -97,11 +97,11 @@ export function Home() {
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Technologies and tools I work with
             <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-gray-500">
-              Click on any skill to learn more about my experience
+              Select a skill to read the experience. Scores on the cards are self-rated.
             </span>
-            <span className="block mt-3 sm:mt-4 text-sm sm:text-base text-amber-600 font-medium">
-              {profile.skillsDisclaimer}
-            </span>
+          </p>
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-800 max-w-3xl mx-auto leading-relaxed border border-amber-200 bg-amber-50 rounded-xl px-4 py-3">
+            {profile.skillsDisclaimer}
           </p>
           <div className="mt-6 sm:mt-8 h-1 w-16 sm:w-20 lg:w-24 bg-primary rounded-full mx-auto"></div>
         </div>

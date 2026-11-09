@@ -6,5 +6,5 @@ export interface Experience {
 export interface Skill {
   alias: string
   baseLevel: number
-  expierience: Experience[]
+  experience: Experience[]
 }

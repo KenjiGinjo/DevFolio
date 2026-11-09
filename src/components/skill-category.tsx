@@ -17,7 +17,7 @@ export function SkillCategory({ title, skills, onSkillClick }: SkillCategoryProp
         </h2>
         <div className="flex-1 h-px bg-gray-200 ml-3 sm:ml-4"></div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
         {Object.entries(skills).map(([key, skill]: [string, Skill]) => (
           <SkillCard
             key={key}
