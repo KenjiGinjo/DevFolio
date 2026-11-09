@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { SKILL_CATEGORIES } from '../constants/skills'
 import { backEnd, devOpsAndCloud, frontEnd, frontEndFrameworksAndLibraries, other } from '../data/skills'
 import { profile } from '@/data/profile'
+import { articles, projects } from '@/data/work'
 import { SkillCategory } from '@/components/skill-category'
 import { SkillDrawer } from '@/components/skill-drawer'
 import { calculateSkillLevel } from '@/utils/skillUtils'
@@ -103,6 +104,72 @@ export function Home() {
         </div>
       </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Projects</h2>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {projects.map((project) => (
+            <article key={project.name} className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{project.name}</h3>
+                <dl className="mt-4 space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                  <div>
+                    <dt className="text-gray-500">Problem</dt>
+                    <dd className="mt-1">{project.problem}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-gray-500">What I shipped</dt>
+                    <dd className="mt-1">{project.role}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-gray-500">One hard part</dt>
+                    <dd className="mt-1">{project.challenge}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-gray-500">Result</dt>
+                    <dd className="mt-1">{project.result}</dd>
+                  </div>
+                </dl>
+                <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm sm:text-base">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-amber-600 hover:underline"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Writing</h2>
+        <div className="mt-6 space-y-5 max-w-3xl">
+          {articles.map((article) => (
+            <article key={article.href}>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                <a
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {article.title}
+                </a>
+              </h3>
+              <p className="mt-1 text-sm text-gray-500">{formatActivityDate(article.date)}</p>
+              <p className="mt-2 text-sm sm:text-base text-gray-700 leading-relaxed">{article.summary}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900">GitHub</h2>
         <p className="mt-2 text-base sm:text-lg text-gray-700 max-w-3xl">
@@ -139,17 +206,14 @@ export function Home() {
       {/* Skills Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-            My Skills
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            Early learning record
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Technologies and tools I work with
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Notes through November 2023
             <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-gray-500">
-              Select a skill to read the experience.
+              Select a skill to read the experience. Current work is in the projects above.
             </span>
-          </p>
-          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-800 max-w-3xl mx-auto leading-relaxed border border-amber-200 bg-amber-50 rounded-xl px-4 py-3">
-            {profile.skillsDisclaimer}
           </p>
           <div className="mt-6 sm:mt-8 h-1 w-16 sm:w-20 lg:w-24 bg-primary rounded-full mx-auto"></div>
         </div>

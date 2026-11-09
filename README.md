@@ -32,7 +32,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 Change these two files first:
 
 1. [`src/data/profile.ts`](src/data/profile.ts) — name, bio, photo, email, social links
-2. [`src/data/skills.ts`](src/data/skills.ts) — skills, self-rated scores, and notes
+2. [`src/data/skills.ts`](src/data/skills.ts) — skills, scores, and notes
 
 Then:
 
@@ -40,7 +40,7 @@ Then:
 - Put social icons in `public/` and point to them from `profile.socials`
 - Update `index.html` / `public/site.webmanifest` if you want a different tab title or PWA name
 
-The number on each card is the `baseLevel` you write. It is a self-rating, capped at 100. Adding more notes does not raise it. Replace the skill notes before you publish the site as your own.
+The number on each card is the `baseLevel` you write, capped at 100. Adding more notes does not raise it. Replace the skill notes before you publish the site as your own.
 
 ## Deploy
 

@@ -1,0 +1,48 @@
+# Kenji Ginjo
+
+> I run Neziva. I take remote contract work: ship the UI, API, data, and the deploy.
+
+TypeScript, React / Next.js, Node / Bun, Hono, PostgreSQL.
+
+This file points at the same work as the homepage. The homepage is the source.
+
+- Site: https://kenjiginjo.com/
+- Email: kenjiginjo@gmail.com
+- GitHub: https://github.com/KenjiGinjo
+- DEV: https://dev.to/kenjiginjo
+- X: https://x.com/KenjiGinjo
+- Neziva: https://www.neziva.com
+
+## Projects
+
+### Vocalace
+
+One Azure word score can pass while the missed phoneme is still wrong. Kenji built the practice app and the public course. Azure’s SAPI label and the course IPA were both shown as the target. The course IPA stays the target, and a mismatched phone hides its score.
+
+- App: https://www.vocalace.com
+- Course: https://course.vocalace.com
+
+### bun-ffmpeg
+
+A Bun service needed 16 kHz mono WAV for Whisper, without fluent-ffmpeg’s video API. Kenji published bun-ffmpeg on npm. It spawns the system ffmpeg binary. audioWav always writes 16 kHz, mono, pcm_s16le WAV, and the package does not ship ffmpeg.
+
+- Repository: https://github.com/KenjiGinjo/bun-ffmpeg
+- npm: https://www.npmjs.com/package/bun-ffmpeg
+
+## Writing
+
+- [One weak phoneme, three words, and a model that cannot invent them](https://dev.to/kenjiginjo/one-weak-phoneme-three-words-and-a-model-that-cannot-invent-them-13mn): Code picks the weakest phoneme and at most 20 dictionary words. The model may only fill empty slots, and a reply is kept only when every word is in that list, once, at the exact length.
+
+- [When the engine's phoneme and the course IPA disagree](https://dev.to/kenjiginjo/when-the-engines-phoneme-and-the-course-ipa-disagree-5d0i): For "cause", the course teaches /kɑːz/ and Azure often labels ao as /ɔ/. The drawer keeps the course IPA as the target and hides the phone score when the two disagree.
+
+- [Merging itinerary planning into the same chat process (and gating tools by membership)](https://dev.to/kenjiginjo/merging-itinerary-planning-into-the-same-chat-process-and-gating-tools-by-membership-51g8): Planning moved into the chat process, and the old stream stayed. Booking and itinerary tools are added only for members. Refine runs only if that session already has a plan.
+
+## GitHub
+
+3,199 contributions in the year ending 9 November 2026, on 293 days. Recent public pushes: neziva, vocalace-course, bun-ffmpeg.
+
+https://github.com/KenjiGinjo
+
+## Early learning record
+
+Skill notes on the homepage cover work through November 2023. They are not the current record of what ships. The projects and posts above are.

@@ -14,8 +14,6 @@ export const profile = {
     after: '. I take remote contract work: ship the UI, API, data, and the deploy.',
     closing: 'TypeScript, React / Next.js, Node / Bun, Hono, PostgreSQL.',
   },
-  skillsDisclaimer:
-    'Skill notes cover work through November 2023.',
   githubActivity: {
     href: 'https://github.com/KenjiGinjo',
     contributions: 3199,
